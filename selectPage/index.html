@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스와이프 팀원소개</title>
+    <!-- 스와이프 stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- 스와이프 script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/b4e1a12ac1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>UI/UX<span>PORTFOLIO</span></h1>
+      <ul class="auto">
+        <li class="btnStart">
+          <i class="fas fa-play"></i>
+        </li>
+        <li class="btnStop">
+          <i class="fas fa-pause"></i>
+        </li>
+      </ul>
+
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="inner">이찬호</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner">송민영</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner">조성희</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner">
+            김호준<img
+              src="./image/이찬호.jpeg"
+              width="300px"
+              height="300px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      var swiper = new Swiper(".wrap", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: "auto",
+        spaceBetween: 50,
+        loop: true,
+        centeredSlides: true,
+        speed: 1000,
+        direction: "horizontal",
+        effect: "coverflow",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: -100,
+          depth: 400,
+          modifier: 1,
+          slideShadows: false,
+        },
+      });
+    </script>
+  </body>
+</html>

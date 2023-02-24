@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style2.css" />
+  </head>
+  <body>
+    <section class="cmd">
+      <div class="inner">
+        <div class="welcome">% Welcome to KDT#Log terminal! %</div>
+        <div class="line1">- - - - - - - - - - - - - - - - - - - - - - -</div>
+        <div class="command">COMMANDS</div>
+        <div class="commands-line">
+          <div>whoami</div>
+          <div>pwd</div>
+          <div>exit</div>
+          <div>ls</div>
+          <div>cd</div>
+          <div>clear</div>
+        </div>
+        <div class="line2">- - - - - - - - - - - - - - - - - - - - - - -</div>
+        <br />
+        <div class="log">
+          <div class="log-1">
+            <span>ch@</span>
+            <span>:</span>
+            <span>MacBookAir ~ </span>
+            <span>%</span>
+          </div>
+          <input type="text" class="input" onkeyup="fnEnterkey();" />
+        </div>
+      </div>
+    </section>
+    <script>
+      function fnEnterkey() {
+        if (window.event.keyCode == 13) {
+          console.log("asdfasdf");
+        }
+      }
+    </script>
+  </body>
+</html>
