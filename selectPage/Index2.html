@@ -40,6 +40,7 @@
       const mac = document.querySelector(".cmd .inner .log .log-1");
       const empty = document.querySelector(".empty");
       const empty2 = document.querySelector(".empty2");
+      // const profile = "이찬호 / 송민영 / 조성희 / 김호준";
 
       const errMsg =
         "은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.";
@@ -58,17 +59,63 @@
             input.value !== "ls"
           ) {
             const dummy = document.createElement("div");
-
             dummy.innerHTML = mac.innerText;
             dummy.setAttribute("style", "color: rgb(18, 184, 134)");
             empty.append(dummy);
-            console.log(dummy);
             empty.append("`" + input.value + errMsg + "`");
             input.value = "";
+
+            // const command = document.createElement("span");
+            // command.style.color = "orange";
+            // command.innerText = "";
+
+            // dummy.append(command);
           } else if (input.value === "whoami") {
             const whoami = document.createElement("div");
+            whoami.innerHTML = mac.innerText;
+            whoami.setAttribute("style", "color: rgb(18, 184, 134)");
+            empty.append(whoami);
+
+            const command = document.createElement("span");
+            command.style.color = "rgba(0, 0, 0, 0.5)";
+            command.innerText = " : whoami";
+            whoami.append(command);
+
+            const profile = document.createElement("span");
+            profile.style.color = "black";
+            profile.innerText = "이찬호 / 송민영 / 조성희 / 김호준";
+            empty.append(profile);
+            input.value = "";
+          } else if (input.value === "pwd") {
+            const pwd = document.createElement("div");
+            pwd.innerHTML = mac.innerText;
+            pwd.setAttribute("style", "color: rgb(18, 184, 134)");
+            pwd.classList.add("dummies");
+            empty.append(pwd);
+
+            const pwdEx = document.createElement("span");
+            pwdEx.style.color = "rgba(0,0,0,0.5)";
+            pwdEx.innerText = ": pwd";
+            pwd.append(pwdEx);
+
+            const pwdText = document.createElement("span");
+            pwdText.style.color = "black";
+            pwdText.innerText = "https://github.com/HOJOON07/music";
+            empty.append(pwdText);
+
+            input.value = "";
+          } else if (input.value === "exit") {
+            home();
+          } else if (input.value === "clear") {
+            //삭제 시켜야함.
           }
         }
+      }
+
+      //exit -> home 화면 으로 이동.
+
+      function home() {
+        window.open("index.html");
       }
     </script>
   </body>
