@@ -1,14 +1,3 @@
-// 패널돌리기
-const frame = document.querySelector("section");
-const articleArr = frame.querySelectorAll("article");
-const len = articleArr.length;
-const deg = 360 / len;
-
-// for(let i = 0; i<len; i++){
-//   articleArr[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
-// }
-
-
 //player
 let allMusic = [
   {
@@ -33,36 +22,52 @@ let allMusic = [
       name : "name4",
       artist : "artist4",
       img : "music-4",
-      audio : "name1"
+      audio : "name4"
   },
   {
       name : "name5",
       artist : "artist5",
       img : "music-5",
-      audio : "name2"
+      audio : "name5"
   },
   {
       name : "name6",
       artist : "artist6",
       img : "music-6",
-      audio : "name3"
+      audio : "name6"
   },
   {
       name : "name7",
       artist : "artist7",
       img : "music-7",
-      audio : "name1"
+      audio : "name7"
   },
   {
       name : "name8",
       artist : "artist8",
       img : "music-8",
-      audio : "name2"
+      audio : "name8"
   },
+  {
+    name : "name9",
+    artist : "artist9",
+    img : "music-9",
+    audio : "name9"
+ },
+ {
+    name : "name10",
+    artist : "artist10",
+    img : "music-10",
+    audio : "name10"
+ },
+ {
+    name : "name11",
+    artist : "artist11",
+    img : "music-11",
+    audio : "name11"
+ },
 ]
 
-
-//2
 const musicWrap = document.querySelector(".wrap__music");
 const musicImg = musicWrap.querySelector(".music__img img");
 const musicName = musicWrap.querySelector(".music__song .name");
@@ -77,16 +82,16 @@ const musicProgressCurrent = musicProgress.querySelector(".current");
 const musicProgressDuration = musicProgress.querySelector(".duration");
 const musicRepeat = musicWrap.querySelector("#control-repeat");
 const musicList = musicWrap.querySelector(".music__list");
-const MusicListBtn = musicWrap.querySelector("#control-list");
+const MusicListBtn = musicWrap.querySelector("#control-list"); //ㅎㅇ
 const MusicListClose = musicList.querySelector(".close");
 const musicListUl = musicList.querySelector(".list ul");
-
+const lp = document.querySelector("figure section article .inner .lp");
+const turntable = document.querySelector("figure section article .inner .turntable");
 let musicIndex = 1;
+
 
 // 음악 재생
 function loadMusic(num){
-    // musicImg.src = `images/${allMusic[num - 1].img}.jpg`;
-    // musicImg.alt = `${allMusic[num - 1].img}`;
     musicName.innerText = allMusic[num - 1].name;
     musicArtist.innerText = allMusic[num - 1].artist;
     musicAudio.src = `./songs/${allMusic[num - 1].audio}.mp3`;
@@ -108,33 +113,42 @@ function pauseMusic(){
     musicAudio.pause();
 }
 
+// 재생/일시정지
+musicPlay.addEventListener("click", ()=>{
+    const isMusicPaused = musicWrap.classList.contains("paused");
+    isMusicPaused ? pauseMusic() : playMusic();
+    
+    if(!lp.classList.contains("lp-on")){
+        lp.classList.remove("lp-off");
+        lp.classList.add("lp-on");
+    }
+    else{
+        lp.classList.remove("lp-on");
+        lp.classList.add("lp-off");
+    }
+    
+    if(!turntable.classList.contains("turntable-on")){
+        turntable.classList.remove("turntable-off");
+        turntable.classList.add("turntable-on");
+    }
+    else{
+        turntable.classList.remove("turntable-on");
+        turntable.classList.add("turntable-off");
+    }
+})
+
 // 이전 곡 듣기 버튼
 let num = 0;
 let active = 0;
 
 function prevMusic(){
-  musicIndex--;
+  musicIndex--; 
   musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
   loadMusic(musicIndex);
+  lp.classList.remove("lp-off");
+  lp.classList.add("lp-on");
   playMusic();
   playListMusic();
-
-//   cd 넘기기
-//   for(let i = 0; i<len; i++){
-    
-//     frame.style.transform = `rotate(${deg * ++num}deg)`;
-  
-//     if (active === 0) {
-//       active = len - 1;
-//     } else {
-//       active--;
-//     }
-  
-//     for (let el of articleArr) {
-//       el.classList.remove("on");
-//     }
-//         articleArr[active].classList.add("on");
-//     }
 }
 
 // 다음 곡 듣기 버튼
@@ -143,24 +157,9 @@ function nextMusic(){
   musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
   loadMusic(musicIndex);
   playMusic();
+  lp.classList.remove("lp-off");
+  lp.classList.add("lp-on");
   playListMusic();
-//   for(let i = 0; i<len; i++){
-    
-//     frame.style.transform = `rotate(${deg * --num}deg)`;
-
-//   if (active === len - 1) {
-//     active = 0;
-//   } else {
-//     active++;
-//   }
-
-//   for (let el of articleArr) {
-//     el.classList.remove("on");
-//   }
-//   articleArr[active].classList.add("on");
-    
-//     }
-  
 }
 
 // 뮤직 진행바
@@ -195,30 +194,15 @@ musicProgress.addEventListener("click", e=>{
     playMusic();
 })
 
-
-
-
-// 재생/일시정지
-musicPlay.addEventListener("click", ()=>{
-    const isMusicPaused = musicWrap.classList.contains("paused");
-    isMusicPaused ? pauseMusic() : playMusic();
-    const pic = document.querySelector("figure section article .inner .pic");
-    
-    if(!pic.classList.contains("on")){
-        pic.classList.add("on");
-    }
-    else{
-        pic.classList.remove("on");
-
-    }
-    
-})
-
 musicPrevBtn.addEventListener("click", function(){
   prevMusic();
+  MusicListBtn.classList.remove("fa-solid");
+        MusicListBtn.classList.add("fa-regular");
 });
 musicNextBtn.addEventListener("click", ()=>{
     nextMusic();
+    MusicListBtn.classList.remove("fa-solid");
+        MusicListBtn.classList.add("fa-regular");
 });
 
 // 반복 버튼
@@ -270,16 +254,6 @@ musicAudio.addEventListener("ended", ()=>{
     }
 })
 
-// 뮤직 리스트 버튼
-// MusicListBtn.addEventListener("click", ()=>{
-//     musicList.classList.add("show");
-// })
-
-// 뮤직 리스트 닫기 버튼
-// MusicListClose.addEventListener("click", ()=>{
-//     musicList.classList.remove("show");
-// })
-
 // 뮤직 리스트 구현하기
 for(let i=0; i<allMusic.length; i++){
     let li = `
@@ -311,8 +285,6 @@ for(let i=0; i<allMusic.length; i++){
 // 뮤직 리스트 클릭하기
 const musicListAll = musicListUl.querySelectorAll("li");
 
-
-
 function playListMusic(){
     for(let j=0; j<musicListAll.length; j++){
         let audioTag = musicListAll[j].querySelector(".audio-duration");
@@ -329,20 +301,42 @@ function playListMusic(){
         }
         musicListAll[j].setAttribute("onclick", "clicked(this)");
     }
+    if(!turntable.classList.contains("turntable-on")){
+        turntable.classList.remove("turntable-off");
+        turntable.classList.add("turntable-on");
+    }
 }
 
 function clicked(el){
     let getLiIndex = el.getAttribute("data-index");
-    
+    lp.classList.remove("lp-off");
+    lp.classList.add("lp-on");
+
     musicIndex = getLiIndex;
     loadMusic(musicIndex);
     playMusic();
     playListMusic();
 } 
+
 // 창이 열리면 노래 시작
 window.addEventListener("load", ()=>{
     loadMusic(musicIndex);
     playListMusic();
+    
+if(turntable.classList.contains("turntable-on")){
+    turntable.classList.remove("turntable-on");
+    turntable.classList.add("turntable-off");
+}
 });
 
-
+//💜
+MusicListBtn.addEventListener("click", function(){
+    if(MusicListBtn.classList.contains("fa-regular")){
+        MusicListBtn.classList.remove("fa-regular");
+        MusicListBtn.classList.add("fa-solid")
+    }
+    else{
+        MusicListBtn.classList.remove("fa-solid");
+        MusicListBtn.classList.add("fa-regular");
+    }
+})
