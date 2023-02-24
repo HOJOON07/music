@@ -23,6 +23,8 @@
         </div>
         <div class="line2">- - - - - - - - - - - - - - - - - - - - - - -</div>
         <br />
+        <div class="empty"></div>
+
         <div class="log">
           <div class="log-1">
             <span>ch@</span>
@@ -35,9 +37,37 @@
       </div>
     </section>
     <script>
+      const mac = document.querySelector(".cmd .inner .log .log-1");
+      const empty = document.querySelector(".empty");
+      const empty2 = document.querySelector(".empty2");
+
+      const errMsg =
+        "은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.";
+      console.log(mac);
+
+      const input = document.querySelector(".cmd .inner .log .input");
+      console.log(input);
+
       function fnEnterkey() {
         if (window.event.keyCode == 13) {
-          console.log("asdfasdf");
+          if (
+            input.value !== "whoami" &&
+            input.value !== "pwd" &&
+            input.value !== "exit" &&
+            input.value !== "clear" &&
+            input.value !== "ls"
+          ) {
+            const dummy = document.createElement("div");
+
+            dummy.innerHTML = mac.innerText;
+            dummy.setAttribute("style", "color: rgb(18, 184, 134)");
+            empty.append(dummy);
+            console.log(dummy);
+            empty.append("`" + input.value + errMsg + "`");
+            input.value = "";
+          } else if (input.value === "whoami") {
+            const whoami = document.createElement("div");
+          }
         }
       }
     </script>

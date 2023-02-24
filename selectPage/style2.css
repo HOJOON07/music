@@ -27,9 +27,15 @@
 /* LOG 부분 */
 .cmd .inner .log {
   display: flex;
+  margin-top: 5px;
+}
+.empty {
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
 }
 .cmd .inner .log .input {
   border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 400px;
   border-radius: 10px;
 }
 
@@ -44,6 +50,7 @@
 }
 .cmd .inner .log .log-1 > span:nth-child(4) {
   margin-right: 10px;
+  color: rgb(18, 184, 134);
 }
 .cmd .inner .commands-line > div:nth-child(1) {
   margin-top: 10px;
