@@ -3,67 +3,67 @@ let allMusic = [
   {
       name : "name1",
       artist : "artist1",
-      img : "music-1",
+      img : "art1",
       audio : "name1"
   },
   {
       name : "name2",
       artist : "artist2",
-      img : "music-2",
+      img : "art2",
       audio : "name2"
   },
   {
       name : "name3",
       artist : "artist3",
-      img : "music-3",
+      img : "art3",
       audio : "name3"
   },
   {
       name : "name4",
       artist : "artist4",
-      img : "music-4",
+      img : "art4",
       audio : "name4"
   },
   {
       name : "name5",
       artist : "artist5",
-      img : "music-5",
+      img : "art5",
       audio : "name5"
   },
   {
       name : "name6",
       artist : "artist6",
-      img : "music-6",
+      img : "art6",
       audio : "name6"
   },
   {
       name : "name7",
       artist : "artist7",
-      img : "music-7",
+      img : "art7",
       audio : "name7"
   },
   {
       name : "name8",
       artist : "artist8",
-      img : "music-8",
+      img : "art8",
       audio : "name8"
   },
   {
     name : "name9",
     artist : "artist9",
-    img : "music-9",
+    img : "art9",
     audio : "name9"
  },
  {
     name : "name10",
     artist : "artist10",
-    img : "music-10",
+    img : "art10",
     audio : "name10"
  },
  {
     name : "name11",
     artist : "artist11",
-    img : "music-11",
+    img : "art11",
     audio : "name11"
  },
 ]
@@ -81,13 +81,15 @@ const musicProgressBar = musicProgress.querySelector(".bar");
 const musicProgressCurrent = musicProgress.querySelector(".current");
 const musicProgressDuration = musicProgress.querySelector(".duration");
 const musicRepeat = musicWrap.querySelector("#control-repeat");
-const musicList = musicWrap.querySelector(".music__list");
-const MusicListBtn = musicWrap.querySelector("#control-list"); //ㅎㅇ
-// const MusicListClose = musicList.querySelector(".close");
+const musicList = document.querySelector(".music__list");
 const musicListUl = musicList.querySelector(".list ul");
+const MusicListBtn = musicWrap.querySelector("#control-list"); //ㅎㅇ
 const lp = document.querySelector("figure section article .inner .lp");
 const turntable = document.querySelector("figure section article .inner .turntable");
 let musicIndex = 1;
+const musicAlbum = document.querySelector(".album__list");
+const musicAlbumUl = musicAlbum.querySelector(".albumArt ul");
+const musicAlbumLi = musicAlbum.querySelector("albumArt ul li");
 
 
 // 음악 재생
@@ -196,13 +198,29 @@ musicProgress.addEventListener("click", e=>{
 
 musicPrevBtn.addEventListener("click", function(){
   prevMusic();
-  MusicListBtn.classList.remove("fa-solid");
-        MusicListBtn.classList.add("fa-regular");
+  MusicListBtn.classList.remove("fa-solid"); 
+  MusicListBtn.classList.add("fa-regular");
+
+  if(!musicAlbumLi.classList.contains("artOn")){
+    musicAlbumLi.classList.remove("artOff");
+    musicAlbumLi.classList.add("artOn");
+  }else{
+    musicAlbumLi.classList.remove("artOn");
+    musicAlbumLi.classList.add("artOff");
+  }
 });
 musicNextBtn.addEventListener("click", ()=>{
     nextMusic();
     MusicListBtn.classList.remove("fa-solid");
-        MusicListBtn.classList.add("fa-regular");
+    MusicListBtn.classList.add("fa-regular");
+    
+  if(!musicAlbumLi.classList.contains("artOn")){
+    musicAlbumLi.classList.remove("artOff");
+    musicAlbumLi.classList.add("artOn");
+  }else{
+    musicAlbumLi.classList.remove("artOn");
+    musicAlbumLi.classList.add("artOff");
+  }
 });
 
 // 반복 버튼
@@ -305,6 +323,18 @@ function playListMusic(){
         turntable.classList.remove("turntable-off");
         turntable.classList.add("turntable-on");
     }
+}
+
+//앨범아트 이미지 넣기
+for(let k = 0; k<allMusic.length; k++){
+    let art_li = `
+    <li data-index="${k + 1}">
+        <div>
+            <img src="./img/${allMusic[k].img}.jpg" alt="album_art" class="${allMusic[k].img}">
+        </div>
+    </li>
+    `;
+    musicAlbumUl.insertAdjacentHTML("beforeend", art_li);
 }
 
 function clicked(el){
