@@ -1,0 +1,19 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
