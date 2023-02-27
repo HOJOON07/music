@@ -145,7 +145,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 24px;
-  background: #96b9bc;
+  background: #7db9b6;
   position: absolute;
   top: 0;
   left: 0;
@@ -168,6 +168,35 @@ body {
   z-index: 1;
 }
 
+/* 세번째 카드 앞 뒤 */
+.flip-card-container .flip-card .card-ranking-front,
+.flip-card-container .flip-card .card-ranking-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: #f2d7d9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 세번째 카드 앞 */
+.flip-card-container .flip-card .card-ranking-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* 세번째 카드 뒤 */
+.flip-card-container .flip-card .card-ranking-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
 /* figure */
 figure {
   z-index: -1;
@@ -178,7 +207,6 @@ figure .img-music-bg {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
   background-color: #9dbc96;
@@ -191,7 +219,17 @@ figure .img-profile-bg {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #96b9bc;
+  background-color: #7db9b6;
+}
+
+/* 세번째 카드 */
+figure .img-ranking-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2d7d9;
 }
 
 /* 카드 가운데 img */
@@ -206,7 +244,14 @@ figure .img-profile-bg {
 .flip-card-container .flip-card .card-profile-front figure > img {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 57%;
+}
+
+/* 세번째 카드 */
+.flip-card-container .flip-card .card-ranking-front figure > img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 49%;
 }
 
 /* 카드 상단 설명 */
@@ -249,7 +294,17 @@ figcaption {
 
 .flip-card-container .flip-card .card-profile-back .img-profile-bg {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-  background-color: rgb(228, 207, 218);
+  background-color: #f5e9cf;
+}
+
+/* /////// */
+.flip-card-container .flip-card .card-ranking-front .img-ranking-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.flip-card-container .flip-card .card-ranking-back .img-ranking-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+  background-color: #ffe1c4;
 }
 
 /* hover state */
@@ -261,6 +316,12 @@ figcaption {
 }
 /* 두번째 카드 */
 .flip-card-container:hover .card-profile-front .img-profile-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+/* 세번째 카드 */
+.flip-card-container:hover .card-ranking-front .img-ranking-bg::before {
   width: 6px;
   border-left-color: var(--primary);
   border-right-color: var(--primary);

@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+}
+h1 {
+  margin-bottom: 20px;
+}
+/* 페이지 이동 버튼 */
+.pageBtn {
+  background-color: antiquewhite;
+  color: black;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
