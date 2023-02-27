@@ -1,4 +1,32 @@
 @import url("./common.css");
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typeText::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  color: #fff;
+}
+
 body {
   // position: relative;
 }
@@ -18,7 +46,7 @@ a {
   justify-content: center;
   text-align: center;
 
-  h1 {
+  .titleWrap {
     position: absolute;
     z-index: 999;
     top: 50%;
