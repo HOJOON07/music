@@ -83,7 +83,7 @@ const musicProgressDuration = musicProgress.querySelector(".duration");
 const musicRepeat = musicWrap.querySelector("#control-repeat");
 const musicList = document.querySelector(".music__list");
 const musicListUl = musicList.querySelector(".list ul");
-const MusicListBtn = musicWrap.querySelector("#control-list"); //ㅎㅇ
+const MusicListBtn = musicWrap.querySelector("#control-list"); 
 const lp = document.querySelector("figure section article .inner .lp");
 const turntable = document.querySelector("figure section article .inner .turntable");
 let musicIndex = 1;
@@ -186,6 +186,28 @@ musicAudio.addEventListener("timeupdate", (e)=>{
     musicProgressCurrent.innerText = `${currentMin}:${currentSec}`
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 진행 버튼
 musicProgress.addEventListener("click", e=>{
     let progressWidth = musicProgress.clientWidth;
@@ -209,6 +231,7 @@ musicPrevBtn.addEventListener("click", function(){
     musicAlbumLi.classList.add("artOff");
   }
 });
+
 musicNextBtn.addEventListener("click", ()=>{
     nextMusic();
     MusicListBtn.classList.remove("fa-solid");
@@ -222,6 +245,33 @@ musicNextBtn.addEventListener("click", ()=>{
     musicAlbumLi.classList.add("artOff");
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 반복 버튼
 musicRepeat.addEventListener("click", ()=>{
@@ -325,7 +375,7 @@ function playListMusic(){
     }
 }
 
-//앨범아트 이미지 넣기
+/*앨범아트 이미지 넣기
 for(let k = 0; k<allMusic.length; k++){
     let art_li = `
     <li data-index="${k + 1}">
@@ -335,7 +385,7 @@ for(let k = 0; k<allMusic.length; k++){
     </li>
     `;
     musicAlbumUl.insertAdjacentHTML("beforeend", art_li);
-}
+}*/
 
 function clicked(el){
     let getLiIndex = el.getAttribute("data-index");

@@ -295,7 +295,7 @@ figure section article .inner .lp.lp-off {
     font-size: 15px;
 }
 .album__list{
-  padding: 15px;
+  padding: 15px 0 15px 15px;
   width: 25vw;
   height: 70vh;
   position: absolute;
@@ -305,6 +305,7 @@ figure section article .inner .lp.lp-off {
 }
 .album__list .albumArt{  
   padding-left: 15px;
+  overflow: hidden;
 }
 .album__list .albumArt ul{
   max-height: 100%;
