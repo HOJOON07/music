@@ -1,74 +1,132 @@
-import { Point } from "./point.js";
+(function () {
+  "use strict";
 
-export class Wave {
-  constructor(index, totalPoints, color) {
-    this.index = index;
-    this.totalPoints = totalPoints;
-    this.color = color;
-    this.points = [];
-  }
+  var cvs, ctx;
+  var nodes = 4;
+  var waves = [];
+  var waveHeight = 90;
+  var colours = ["#f80000", "#00f800", "#0000f8"];
 
-  resize(stageWidth, stageHeight) {
-    this.stageWidth = stageWidth;
-    this.stageHeight = stageHeight;
-    console.log(stageWidth, stageHeight);
+  // Initiator function
+  function init() {
+    cvs = document.getElementById("canvas");
+    ctx = cvs.getContext("2d");
+    resizeCanvas(cvs);
 
-    this.centerX = stageWidth / 2; //중간을 각각 넓이, 높이를 2로 나눈 값으로 지정
-    this.centerY = stageHeight / 2;
-
-    this.pointGap = this.stageWidth / (this.totalPoints - 1); //각 점의 간격은 '전체넓이 / 전체 점의 숫자 -1' 이 됩니다.
-    //이렇게 나누면 화면의 시작부터 끝까지 고른 간격으로 점을 찍을 수 있습니다.
-
-    this.init(); //초기화 함수로 넘어가기
-  }
-
-  init() {
-    //가운데 하나의 점 만드는 코드
-    // this.point = new Point(this.centerX, this.centerY);
-
-    this.points = [];
-
-    for (let i = 0; i < this.totalPoints; i++) {
-      const point = new Point(this.index + i, this.pointGap * i, this.centerY);
-      this.points[i] = point;
+    for (var i = 0; i < 3; i++) {
+      waves.push(new wave(colours[i], 1, nodes));
     }
-    //points의 각각 인덱스를 넣어주고 인덱스 -> 점의 위치에 따라 파도 모양을 다르게 해주기 위해서
+
+    update();
   }
 
-  draw(ctx) {
+  function update() {
+    var fill = window
+      .getComputedStyle(document.querySelector(".header"), null)
+      .getPropertyValue("background-color");
+    var test = window
+      .getComputedStyle(document.querySelector(".footer"), null)
+      .getPropertyPriority("background-color");
+    ctx.fillStyle = fill;
+    ctx.fillStyle = test;
+    ctx.globalCompositeOperation = "source-over";
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    ctx.globalCompositeOperation = "screen";
+    for (var i = 0; i < waves.length; i++) {
+      for (var j = 0; j < waves[i].nodes.length; j++) {
+        bounce(waves[i].nodes[j]);
+      }
+      drawWave(waves[i]);
+    }
+    ctx.fillStyle = fill;
+    ctx.fillStyle = test;
+
+    requestAnimationFrame(update);
+  }
+
+  function wave(colour, lambda, nodes) {
+    this.colour = colour;
+    this.lambda = lambda;
+    this.nodes = [];
+    var tick = 1;
+
+    for (var i = 0; i <= nodes + 2; i++) {
+      var temp = [((i - 1) * cvs.width) / nodes, 0, Math.random() * 200, 0.3];
+      this.nodes.push(temp);
+      // console.log(temp);
+    }
+    // console.log(this.nodes);
+  }
+
+  function bounce(nodeArr) {
+    nodeArr[1] = (waveHeight / 2) * Math.sin(nodeArr[2] / 20) + cvs.height / 2;
+    nodeArr[2] = nodeArr[2] + nodeArr[3];
+  }
+
+  function drawWave(obj) {
+    var diff = function (a, b) {
+      return (b - a) / 2 + a;
+    };
+
+    ctx.fillStyle = obj.colour;
     ctx.beginPath();
-    ctx.fillStyle = this.color;
+    ctx.moveTo(0, cvs.height);
+    ctx.lineTo(obj.nodes[0][0], obj.nodes[0][1]);
 
-    let prevX = this.points[0].x;
-    let prevY = this.points[0].y;
+    for (var i = 0; i < obj.nodes.length; i++) {
+      if (obj.nodes[i + 1]) {
+        ctx.quadraticCurveTo(
+          obj.nodes[i][0],
+          obj.nodes[i][1],
+          diff(obj.nodes[i][0], obj.nodes[i + 1][0]),
+          diff(obj.nodes[i][1], obj.nodes[i + 1][1])
+        );
+      } else {
+        ctx.lineTo(obj.nodes[i][0], obj.nodes[i][1]);
+        ctx.lineTo(cvs.width, cvs.height);
+      }
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
 
-    ctx.moveTo(prevX, prevY); //점의 시작점으로 붓을 옮겨주는거
+  function drawNodes(array) {
+    ctx.strokeStyle = "#888"; //도형의 윤곽선
 
-    for (let i = 1; i < this.totalPoints; i++) {
-      if (i < this.totalPoints - 1) {
-        this.points[i].update();
+    for (var i = 0; i < array.length; i++) {
+      ctx.beginPath(); ///도형 그리기 시작
+      ctx.arc(array[i][0], array[i][1], 4, 0, 2 * Math.PI); // 원의 중심 좌표와 반지름, 원을 그리기 시작할 시작 위치와 종료 위치의 좌표, 그리는 방향 등을 설정
+      ctx.closePath(); // 도형그리기를 마침
+      ctx.stroke(); //선그리기 시작함
+    }
+  }
+
+  function drawLine(array) {
+    ctx.strokeStyle = "#888";
+
+    for (var i = 0; i < array.length; i++) {
+      if (array[i + 1]) {
+        ctx.lineTo(array[i + 1][0], array[i + 1][1]);
+      }
+    }
+
+    ctx.stroke();
+  }
+
+  function resizeCanvas(canvas, width, height) {
+    if (width && height) {
+      canvas.width = width;
+      canvas.height = height;
+    } else {
+      if (window.innerWidth > 1920) {
+        canvas.width = window.innerWidth;
+      } else {
+        canvas.width = 1920;
       }
 
-      const cx = (prevX + this.points[i].x) / 2;
-      const cy = (prevY + this.points[i].y) / 2;
-
-      // ctx.lineTo(cx, cy);
-      ctx.quadraticCurveTo(prevX, prevY, cx, cy);
-
-      prevX = this.points[i].x;
-      prevY = this.points[i].y;
+      canvas.height = waveHeight;
     }
-
-    ctx.lineTo(prevX, prevY);
-
-    ctx.lineTo(this.stageWidth, this.stageHeight);
-    ctx.lineTo(this.points[0].x, this.stageHeight);
-    ctx.fill();
-    ctx.closePath();
-
-    // this.point.update();
-
-    // ctx.arc(this.point.x, this.point.y, 30, 0, 2 * Math.PI);
-    // ctx.fill();
   }
-}
+
+  document.addEventListener("DOMContentLoaded", init, false);
+})();
