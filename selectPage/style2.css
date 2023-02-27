@@ -28,15 +28,31 @@
 .cmd .inner .log {
   display: flex;
   margin-top: 5px;
+
+  align-items: center;
 }
 .empty {
   color: rgba(0, 0, 0, 0.4);
   line-height: 1.5;
+  overflow: auto;
+  width: 100%;
+  height: auto;
+  max-height: 50%;
 }
 .cmd .inner .log .input {
-  border: 1px solid rgba(0, 0, 0, 0.4);
   width: 400px;
-  border-radius: 10px;
+  border: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+.cmd .inner .log .input:focus {
+  border: 1px solid beige;
+  width: 400px;
+  outline: none;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .cmd .inner .log .log-1 > span:nth-child(1) {
