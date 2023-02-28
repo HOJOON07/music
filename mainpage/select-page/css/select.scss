@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .select-page {
   /* transform: scaleY(1); */
   display: flex;
@@ -17,10 +16,12 @@
   --white-2: hsl(0, 0%, 80%);
   --dark: hsl(var(--hue), 25%, 10%);
   --grey: hsl(0, 0%, 50%);
+
   /* 카드 넓이 */
   width: 310px;
   height: 500px;
   margin: 40px;
+
   perspective: 1000px; /* 원근법 */
 }
 
@@ -49,8 +50,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,8 +79,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,8 +108,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +169,6 @@ figure .img-ranking-bg {
   transform: translateY(-50%);
   width: 100%;
 }
-
 /* 두번째 카드 */
 .flip-card-container .flip-card .card-profile-front figure > img {
   position: absolute;
@@ -209,38 +206,33 @@ figcaption {
 .img-music-bg {
   /* background: hsla(var(--hue), 25%, 10%, 0.5); 불투명도 
 } */
+
 .flip-card-container .flip-card .card-music-front .img-music-bg {
-  -webkit-clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
-          clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .flip-card-container .flip-card .card-music-back .img-music-bg {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
   background-color: rgb(248, 247, 197);
 }
 
 /* /////// */
 .flip-card-container .flip-card .card-profile-front .img-profile-bg {
-  -webkit-clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
-          clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .flip-card-container .flip-card .card-profile-back .img-profile-bg {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
   background-color: #f5e9cf;
 }
 
 /* /////// */
 .flip-card-container .flip-card .card-ranking-front .img-ranking-bg {
-  -webkit-clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
-          clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .flip-card-container .flip-card .card-ranking-back .img-ranking-bg {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
   background-color: #ffe1c4;
 }
 
@@ -251,14 +243,12 @@ figcaption {
   border-left-color: var(--primary);
   border-right-color: var(--primary);
 }
-
 /* 두번째 카드 */
 .flip-card-container:hover .card-profile-front .img-profile-bg::before {
   width: 6px;
   border-left-color: var(--primary);
   border-right-color: var(--primary);
 }
-
 /* 세번째 카드 */
 .flip-card-container:hover .card-ranking-front .img-ranking-bg::before {
   width: 6px;
@@ -267,48 +257,89 @@ figcaption {
 }
 
 /* 버튼 */
-.select-page a {
-  font-size: 17px;
-  font-family: inherit;
-  font-weight: bold;
-  color: gray;
-  letter-spacing: 1px;
-  padding: 9px 20px;
-  border: 2px solid var(--grey);
-  border-radius: 1000px;
-  background: transparent;
-  transition: 0.3s;
-  cursor: pointer;
+.select-page {
+  a {
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: bold;
+    color: gray;
+
+    letter-spacing: 1px;
+
+    padding: 9px 20px;
+    border: 2px solid var(--grey);
+    border-radius: 1000px;
+    background: transparent;
+    transition: 0.3s;
+
+    cursor: pointer;
+  }
+
+  a:hover,
+  a:focus {
+    color: rgb(82, 82, 82);
+    /* background: hsla(var(--hue), 25%, 10%, 0.2); */
+    border-color: currentColor;
+    letter-spacing: 3px;
+  }
+
+  a:active {
+    transform: translate(2px);
+  }
 }
-.select-page a:hover,
-.select-page a:focus {
-  color: rgb(82, 82, 82);
-  /* background: hsla(var(--hue), 25%, 10%, 0.2); */
-  border-color: currentColor;
-  letter-spacing: 3px;
-}
-.select-page a:active {
-  transform: translate(2px);
-}
+
+// a {
+//   font-size: 17px;
+//   font-family: inherit;
+//   font-weight: bold;
+//   color: gray;
+
+//   letter-spacing: 1px;
+
+//   padding: 9px 20px;
+//   border: 2px solid var(--grey);
+//   border-radius: 1000px;
+//   background: transparent;
+//   transition: 0.3s;
+
+//   cursor: pointer;
+// }
+
+// a:hover,
+// a:focus {
+//   color: rgb(82, 82, 82);
+//   /* background: hsla(var(--hue), 25%, 10%, 0.2); */
+//   border-color: currentColor;
+//   letter-spacing: 3px;
+// }
+
+// a:active {
+//   transform: translate(2px);
+// }
 
 /* .design-container */
 .design-container {
   --tr: 90;
   --op: 0.5;
+
   width: 100%;
   height: 100%;
+
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
+
   pointer-events: none;
 }
 
 /* .design */
 .design {
   display: block;
+
   background: var(--grey);
   position: absolute;
+
   opacity: var(--op);
   transition: 0.3s;
 }
@@ -324,7 +355,7 @@ figcaption {
 .design--1,
 .design--2 {
   top: 0;
-  transform: translateY(calc((var(--tr) - var(--tr) * 2) * 1%));
+  transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%));
 }
 
 .design--1 {
@@ -338,7 +369,7 @@ figcaption {
 .design--3,
 .design--4 {
   bottom: 0;
-  transform: translateY(calc((var(--tr) + var(--tr) - var(--tr)) * 1%));
+  transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%));
 }
 
 .design--3 {
@@ -360,7 +391,7 @@ figcaption {
 .design--5,
 .design--6 {
   left: 0;
-  transform: translateX(calc((var(--tr) - var(--tr) * 2) * 1%));
+  transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
 }
 
 .design--5 {
@@ -374,7 +405,7 @@ figcaption {
 .design--7,
 .design--8 {
   right: 0;
-  transform: translateX(calc((var(--tr) + var(--tr) - var(--tr)) * 1%));
+  transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%));
 }
 
 .design--7 {
@@ -406,4 +437,4 @@ a:focus + .design-container {
   display: none;
   /* transform: scaleY(0); */
   /* visibility: hidden; */
-}/*# sourceMappingURL=select.css.map */
+}

@@ -1,4 +1,4 @@
-const fullScreen = document.querySelector("header .inner a:nth-child(3) > i");
+const fullScreen = document.querySelector(".navbar .inner a:nth-child(3) > i");
 //전체 화면 처리
 fullScreen.addEventListener("click", function () {
   if (fullScreen.classList.contains("fa-up-right-and-down-left-from-center")) {
