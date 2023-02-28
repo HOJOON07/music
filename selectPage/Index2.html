@@ -39,7 +39,7 @@
         </div>
         <div class="line2">- - - - - - - - - - - - - - - - - - - - - - -</div>
         <br />
-        <div class="empty"></div>
+        <div id="empty" class="empty"></div>
 
         <div class="log">
           <div class="log-1">
@@ -151,11 +151,7 @@
           //input = clear
           else if (input.value === "clear") {
             //쌓인 div 삭제
-            const div = empty.querySelectorAll("div");
-            for (let i = 0; i < div.length; i++) {
-              div[i].remove();
-              empty.innerText = "";
-            }
+            empty.innerText = "";
             input.value = "";
           }
           //input = ls (home 에서의 ls)
