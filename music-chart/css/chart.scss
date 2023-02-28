@@ -1,0 +1,247 @@
+// RESET
+@import "reset";
+
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap");
+
+@font-face {
+  font-family: "KoddiUDOnGothic-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  -ms-overflow-style: none;
+  // background-color: black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+//VIDEO
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// HEADER
+header {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  height: 7vh;
+
+  .inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    a {
+      position: relative;
+
+      /* HOME icon */
+      &:nth-child(1) {
+        position: absolute;
+        left: 0;
+        color: rgb(155, 155, 155);
+        margin-left: 30px;
+        font-size: 25px;
+      }
+
+      /* QR-CODE icon */
+      &:nth-child(2) {
+        position: absolute;
+        right: 0;
+        margin-right: 100px;
+        color: rgb(155, 155, 155);
+        font-size: 20px;
+      }
+
+      /* Screen확장 icon */
+      &:nth-child(3) {
+        position: absolute;
+        right: 0;
+        color: rgb(155, 155, 155);
+        margin-right: 50px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// MUSIC CHART
+// .music-chart {
+//   .inner {
+//     position: absolute;
+//     width: 70vw;
+//     top: 80px;
+//     left: 50%;
+//     transform: translateX(-50%);
+
+//     .title {
+//       display: flex;
+//       justify-content: center;
+//       font-family: "Rowdies", cursive;
+//     }
+
+//     .title-block {
+//       border: 1px solid black;
+//       font-family: "KoddiUDOnGothic-Regular";
+//       margin-top: 15px;
+//       font-size: 20px;
+//       display: flex;
+//       justify-content: space-around;
+//       .ranking {
+//       }
+//       .albumCover {
+//       }
+
+//       .song {
+//       }
+
+//       .singer {
+//       }
+
+//       .album {
+//       }
+//     }
+
+//     .chart-block_1 {
+//       .chart_div {
+//         display: flex;
+//         &:nth-child(1) {
+//           flex-basis: 100px;
+//         }
+//         &:nth-child(2) {
+//           flex-basis: 100px;
+//         }
+//         &:nth-child(3) {
+//           flex-basis: 100px;
+//         }
+//         &:nth-child(4) {
+//           flex-basis: 100px;
+//         }
+//         &:nth-child(5) {
+//           flex-basis: 100px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.chart_section {
+  .inner {
+    position: absolute;
+    width: 80vw;
+    top: 50%;
+    left: 50%;
+    height: 65vh;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 20px;
+    padding: 0 50px;
+
+    .rank_list {
+      // margin: 0 -43px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-40%);
+
+      h1 {
+        font-family: "KoddiUDOnGothic-Regular";
+        margin: 0 30px;
+        span {
+          color: black;
+          font-size: 25px;
+        }
+      }
+
+      .scroll_list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        .list_item {
+          position: relative;
+          display: flex;
+          vertical-align: top;
+
+          // width: 400px;
+          padding: 0;
+          box-sizing: border-box;
+          ul {
+            margin: 0 20px;
+          }
+
+          .list_track_row {
+            background-color: white;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: table;
+            width: 100%;
+            height: 50px;
+            padding: 10px 10px;
+            vertical-align: middle;
+            flex-wrap: wrap;
+
+            .album {
+              white-space: normal;
+              display: table-cell;
+              width: 50px;
+              vertical-align: middle;
+
+              img {
+                width: 50px;
+              }
+            }
+            .rank {
+              display: table-cell;
+              width: 31px;
+              padding: 5px 0 0 9px;
+              text-align: center;
+              padding-top: 5px;
+              color: black;
+            }
+            .song_area {
+              display: table-cell;
+              padding: 4px 20px 0 8px;
+              vertical-align: top;
+              .song {
+                height: 20px;
+                color: black;
+                .title {
+                }
+              }
+              .singer {
+                height: 19px;
+                margin-top: 3px;
+                font-size: 15px;
+                line-height: 19px;
+                letter-spacing: -0.1px;
+                color: #888;
+                .artist {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cheerio-httpcli": "^0.8.3",
+    "jsdom": "^21.1.0"
+  }
+}
