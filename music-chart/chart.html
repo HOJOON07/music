@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Chart</title>
+
+    <!-- RESET CSS
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    /> -->
+
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/b4e1a12ac1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Rubik+Spray+Paint&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SWIPER -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/chart.css " />
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- JSON 파일 소스연결  -->
+    <script src="./item.json"></script>
+
+    <!-- JS 연결 -->
+    <script defer src="./js/chart.js"></script>
+  </head>
+  <body>
+    <figure>
+      <img src="./img/background.jpg" />
+    </figure>
+    <!-- HEADER -->
+    <header>
+      <div class="inner">
+        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-qrcode"></i></a>
+        <a href="#"
+          ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
+        ></a>
+      </div>
+    </header>
+    <!-- 슬라이드 음악 차트 -->
+    <div class="chart_section">
+      <div class="inner">
+        <div class="rank_list">
+          <h1>Top 50 <span>></span></h1>
+          <ul class="scroll_list">
+            <li class="list_item">
+              <ul class="first_list_ul"></ul>
+              <ul class="second_list_ul"></ul>
+              <ul class="third_list_ul"></ul>
+              <ul class="fourth_list_ul"></ul>
+              <ul class="fifth_list_ul"></ul>
+              <ul class="sixth_list_ul"></ul>
+              <ul class="seventh_list_ul"></ul>
+              <ul class="eighth_list_ul"></ul>
+              <ul class="ninth_list_ul"></ul>
+              <ul class="tenth_list_ul"></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script></script>
+
+  <!-- SCRIPT 
+    // for (let i = 0; i < 100; i++) { // let songData =
+  JSON.parse(JSON.stringify(song_data[i].song)); // 노래 // let singerData =
+  JSON.parse(JSON.stringify(song_data[i].singer)); // 가수 //
+  console.log(`${songData} - ${singerData}`); // } -->
+</html>
