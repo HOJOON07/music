@@ -3,3 +3,7 @@
 // 3. json data 에서 (배열임) 인덱스를 돌면서 문자열을 검색하고 인풋에
 // 입력된 밸류를 포함한 인덱스를 반환한다.
 // 4.그거를 하이드 해놓은 div창에 넣는다.
+
+document.querySelector("searchInput");
+// const chartData = require("../../../music-chart/item.json");
+console.log(song_data);
