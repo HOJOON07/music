@@ -87,9 +87,6 @@ const MusicListBtn = musicWrap.querySelector("#control-list");
 const lp = document.querySelector("figure section article .inner .lp");
 const turntable = document.querySelector("figure section article .inner .turntable");
 let musicIndex = 1;
-const musicAlbum = document.querySelector(".album__list");
-const musicAlbumUl = musicAlbum.querySelector(".albumArt ul");
-const musicAlbumLi = musicAlbum.querySelector("albumArt ul li");
 
 
 // 음악 재생
@@ -105,6 +102,7 @@ function playMusic(){
     musicPlay.innerText = "pause";
     musicPlay.setAttribute("title", "일시정지")
     musicAudio.play();
+    console.log("왔니?")
 }
 
 // 일시정지 버튼
@@ -186,38 +184,37 @@ musicAudio.addEventListener("timeupdate", (e)=>{
     musicProgressCurrent.innerText = `${currentMin}:${currentSec}`
 })
 
+const musicAlbumUl = document.querySelector(".inner ul");
+const musicAlbumLi = document.querySelector(".inner ul li");
+let art_li;
 
+//앨범아트 이미지 넣기
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for(let k = 0; k<allMusic.length; k++){
+     art_li = `
+    <li data-index="${k + 1}">
+        <div>
+            <img src="./img/${allMusic[k].img}.jpg" alt="album_art" class="${allMusic[k].img}">
+        </div>
+    </li>
+    `;
+    musicAlbumUl.insertAdjacentHTML("beforeend", art_li);
+}
 
 // 진행 버튼
 musicProgress.addEventListener("click", e=>{
     let progressWidth = musicProgress.clientWidth;
     let clickedOffsetX = e.offsetX;
     let songDuration = musicAudio.duration;
+    console.log("왔니?")
     
     musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
     playMusic();
+    
 })
 
+
+//전
 musicPrevBtn.addEventListener("click", function(){
   prevMusic();
   MusicListBtn.classList.remove("fa-solid"); 
@@ -232,6 +229,8 @@ musicPrevBtn.addEventListener("click", function(){
   }
 });
 
+
+//후
 musicNextBtn.addEventListener("click", ()=>{
     nextMusic();
     MusicListBtn.classList.remove("fa-solid");
@@ -244,34 +243,9 @@ musicNextBtn.addEventListener("click", ()=>{
     musicAlbumLi.classList.remove("artOn");
     musicAlbumLi.classList.add("artOff");
   }
+
+  
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 반복 버튼
 musicRepeat.addEventListener("click", ()=>{
@@ -325,7 +299,7 @@ musicAudio.addEventListener("ended", ()=>{
 // 뮤직 리스트 구현하기
 for(let i=0; i<allMusic.length; i++){
     let li = `
-        <li data-index="${i + 1}">
+        <li data-index="${i + 1}" class="songNum${i}">
             <div>
                 <em>${allMusic[i].name}</em>
                 <p>${allMusic[i].artist}</p>
@@ -375,20 +349,9 @@ function playListMusic(){
     }
 }
 
-/*앨범아트 이미지 넣기
-for(let k = 0; k<allMusic.length; k++){
-    let art_li = `
-    <li data-index="${k + 1}">
-        <div>
-            <img src="./img/${allMusic[k].img}.jpg" alt="album_art" class="${allMusic[k].img}">
-        </div>
-    </li>
-    `;
-    musicAlbumUl.insertAdjacentHTML("beforeend", art_li);
-}*/
-
 function clicked(el){
     let getLiIndex = el.getAttribute("data-index");
+    
     lp.classList.remove("lp-off");
     lp.classList.add("lp-on");
 
@@ -396,6 +359,23 @@ function clicked(el){
     loadMusic(musicIndex);
     playMusic();
     playListMusic();
+
+    //el 인덱스
+     console.log(getLiIndex)
+   
+    const innerArt = document.querySelector("figure section article .inner")
+    const albumArtNum = innerArt.querySelectorAll("ul>li");
+    console.log(albumArtNum)
+    albumArtNum[0].classList.add("album_on")
+
+   
+    for(let i=1; i<12; i++){
+        albumArtNum[getLiIndex - 1].classList.add("album_on");
+        if((i-1) !== (getLiIndex-1)){
+            albumArtNum[i-1].classList.remove("album_on")
+        }
+    }
+
 } 
 
 // 창이 열리면 노래 시작
@@ -420,3 +400,5 @@ MusicListBtn.addEventListener("click", function(){
         MusicListBtn.classList.add("fa-regular");
     }
 })
+
+

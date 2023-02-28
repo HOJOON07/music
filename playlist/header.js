@@ -1,5 +1,5 @@
 const fullScreen = document.querySelector(
-  "header .inner a:nth-child(3) > i"
+  "header .headerinner a:nth-child(3) > i"
 );
 //전체 화면 처리
 fullScreen.addEventListener("click", function () {
