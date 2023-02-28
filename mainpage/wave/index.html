@@ -24,6 +24,9 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- JSON 파일 소스연결  -->
+    <script src="../../music-chart/item.json"></script>
+
     <!-- Main Js -->
 
     <script defer src="./js/wave.js"></script>
@@ -62,24 +65,26 @@
       </div>
     </div> -->
     <div class="navbar">
-      <div class="leftBox">
-        <div class="homeIcon">
-          <a href="#"><i class="fa-solid fa-house"></i></a>
+      <div class="container">
+        <div class="leftBox">
+          <div class="homeIcon">
+            <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
+          </div>
+          <div class="searchWrap">
+            <input class="searchInput" type="text" placeholder="노래 검색" />
+          </div>
         </div>
-        <div class="searchWrap">
-          <input class="searchInput" type="text" placeholder="노래 검색" />
-        </div>
-      </div>
-      <div class="rightBox">
-        <div class="qrIcon">
-          <a href="#">
-            <i class="fa-solid fa-qrcode"></i>
-          </a>
-        </div>
-        <div class="fullScreenIcon">
-          <a href="#">
-            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-          </a>
+        <div class="rightBox">
+          <div class="qrIcon">
+            <a class="qrBtn" href="#">
+              <i class="fa-solid fa-qrcode"></i>
+            </a>
+          </div>
+          <div class="fullScreenIcon">
+            <a class="fullBtn" href="#">
+              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>

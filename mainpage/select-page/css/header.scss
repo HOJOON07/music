@@ -60,13 +60,17 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  .leftBox {
-    width: 40vw;
-    display: flex;
-  }
-
-  .rightBox {
-    width: 60vw;
-    display: flex;
+  .container {
+    width: 1200px;
+    margin: 0 auto;
   }
 }
+// .leftBox {
+//   // width: 40vw;
+//   display: flex;
+// }
+
+// .rightBox {
+//   // width: 60vw;
+//   display: flex;
+// }
