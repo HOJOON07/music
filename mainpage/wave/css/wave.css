@@ -1,4 +1,3 @@
-@import url("./common.css");
 @keyframes fade {
   to {
     opacity: 1;
@@ -34,7 +33,6 @@ a:hover {
 
 .header {
   background-color: lavender;
-  cursor: pointer;
   color: #ddf;
   min-height: 100px;
   height: 50vh;
@@ -54,6 +52,13 @@ a:hover {
   margin: 0;
   opacity: 1;
   color: darkgray;
+  transition: all 1s;
+}
+.header .typeText {
+  cursor: pointer;
+}
+.header .typeText.hide {
+  display: none;
 }
 
 .footer {
