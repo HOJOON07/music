@@ -7,14 +7,54 @@ body {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 7vh;
+  height: 80px;
   top: 0;
   z-index: 1;
-  border-bottom: 1px solid black;
   align-items: center;
   justify-content: space-between;
 }
-.navbar .container {
-  width: 1200px;
-  margin: 0 auto;
+.navbar .leftBox {
+  display: flex;
+  padding-left: 40px;
+}
+.navbar .leftBox .homeIcon {
+  font-size: 28px;
+  padding-right: 30px;
+}
+.navbar .leftBox .searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid darkgray;
+  border-radius: 15px;
+  width: 280px;
+}
+.navbar .leftBox .searchWrap .searchInput {
+  outline: none;
+  display: block;
+  margin-left: 10px;
+  border: none;
+  width: 220px;
+  height: 85%;
+  font-size: 15px;
+  background-color: transparent;
+}
+.navbar .leftBox .searchWrap .searchIconWrap {
+  align-items: center;
+}
+.navbar .leftBox .searchWrap .searchIconWrap .fa-solid {
+  display: block;
+  font-size: 18px;
+  color: darkgray;
+  margin-left: 10px;
+}
+.navbar .rightBox {
+  font-size: 24px;
+  width: 100px;
+  justify-content: space-around;
+  display: flex;
+  margin-right: 40px;
+}
+.navbar .rightBox .qrIcon {
+  font-size: 28px;
 }/*# sourceMappingURL=header.css.map */
