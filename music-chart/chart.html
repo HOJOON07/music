@@ -46,9 +46,6 @@
     <script defer src="./js/chart.js"></script>
   </head>
   <body>
-    <figure>
-      <img src="./img/background.jpg" />
-    </figure>
     <!-- HEADER -->
     <header>
       <div class="inner">
@@ -60,8 +57,122 @@
       </div>
     </header>
     <!-- 슬라이드 음악 차트 -->
-    <div class="chart_section">
-      <div class="inner">
+    <div class="chart_section_1">
+      <div class="inner_1">
+        <div class="select_div">
+          <h1>Top 5</h1>
+          <button id="btn_now" class="clicked">NOW</button>
+          <button id="btn_ballad">발라드</button>
+          <button id="btn_dance">댄스</button>
+          <button id="btn_rap">랩/힙합</button>
+          <button id="btn_rb">R&B/SOUL</button>
+
+          <div class="calendar">
+            <div class="upper">
+              <div id="month"></div>
+            </div>
+            <div class="lower">
+              <div id="day"></div>
+              <div id="date"></div>
+              <div id="year"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rank_inner_1">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_2">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_3">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_4">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_5">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+      </div>
+      <a id="btn_bottom"><i class="fa-solid fa-angles-down"></i></a>
+    </div>
+    <div class="chart_section_2">
+      <div class="inner_2">
         <div class="rank_list">
           <h1>Top 50 <span>></span></h1>
           <ul class="scroll_list">
@@ -76,17 +187,80 @@
               <ul class="eighth_list_ul"></ul>
               <ul class="ninth_list_ul"></ul>
               <ul class="tenth_list_ul"></ul>
+              <!-- <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul> -->
             </li>
           </ul>
         </div>
       </div>
+      <a id="btn_top"><i class="fa-solid fa-angles-up"></i></a>
     </div>
   </body>
-  <script></script>
+  <script>
+    $("#btn_now").on("click", function () {
+      console.log("1");
+      $("#rank_inner_1").show();
+      $("#rank_inner_2").hide();
+      $("#rank_inner_3").hide();
+      $("#rank_inner_4").hide();
+      $("#rank_inner_5").hide();
+    });
+    $("#btn_ballad").on("click", function () {
+      console.log("2");
+      $("#rank_inner_2").show();
+      $("#rank_inner_1").hide();
+      $("#rank_inner_5").hide();
+      $("#rank_inner_3").hide();
+      $("#rank_inner_4").hide();
+    });
+    $("#btn_dance").on("click", function () {
+      console.log("3");
+      $("#rank_inner_3").show();
+      $("#rank_inner_1").hide();
+      $("#rank_inner_2").hide();
+      $("#rank_inner_5").hide();
+      $("#rank_inner_4").hide();
+    });
+    $("#btn_rap").on("click", function () {
+      console.log("4");
+      $("#rank_inner_4").show();
+      $("#rank_inner_1").hide();
+      $("#rank_inner_2").hide();
+      $("#rank_inner_3").hide();
+      $("#rank_inner_5").hide();
+    });
+    $("#btn_rb").on("click", function () {
+      console.log("5");
+      $("#rank_inner_5").show();
+      $("#rank_inner_1").hide();
+      $("#rank_inner_2").hide();
+      $("#rank_inner_3").hide();
+      $("#rank_inner_4").hide();
+    });
 
-  <!-- SCRIPT 
-    // for (let i = 0; i < 100; i++) { // let songData =
-  JSON.parse(JSON.stringify(song_data[i].song)); // 노래 // let singerData =
-  JSON.parse(JSON.stringify(song_data[i].singer)); // 가수 //
-  console.log(`${songData} - ${singerData}`); // } -->
+    // 페이지 상단으로 이동하는 메소드
+    const html_top = () => {
+      // scrollTop은 상단이기 때문에 0, duration은 애니메이션 속도 (ms)
+      $("html, body").animate({ scrollTop: 0 }, { duration: 500 });
+    };
+    // 버튼 클릭 시 페이지 상단으로 이동
+    $("#btn_top").on("click", () => html_top());
+
+    // 버튼 클릭 시 페이지 하단으로 이동
+    $("#btn_bottom").click(function () {
+      // $("html, body").scrollTop($(document).height());
+      $("html, body").animate(
+        { scrollTop: $(document).height() },
+        { duration: 900 }
+      );
+    });
+  </script>
 </html>
