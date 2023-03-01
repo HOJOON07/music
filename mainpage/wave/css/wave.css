@@ -27,6 +27,9 @@ a {
   text-decoration: none;
   color: darkgray;
 }
+a:hover {
+  color: rgb(78, 78, 78);
+}
 
 .header {
   background-color: lavender;

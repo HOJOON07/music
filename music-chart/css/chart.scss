@@ -2,19 +2,13 @@
 @import "reset";
 
 // FONT
-@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap");
 
-@font-face {
-  font-family: "KoddiUDOnGothic-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+//font-family: 'Anton', sans-serif;
 
 body {
   -ms-overflow-style: none;
-  // background-color: black;
+  background: linear-gradient(55deg, #c9d6ff, #e2e2e2);
 }
 
 ::-webkit-scrollbar {
@@ -22,21 +16,7 @@ body {
 }
 
 //VIDEO
-figure {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -1;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
 // HEADER
 header {
   top: 0;
@@ -85,69 +65,282 @@ header {
   }
 }
 
-// MUSIC CHART
-// .music-chart {
-//   .inner {
-//     position: absolute;
-//     width: 70vw;
-//     top: 80px;
-//     left: 50%;
-//     transform: translateX(-50%);
+.chart_section_1 {
+  height: 100vh;
+  // background-image: url("../img/newjeans_bg.jpeg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: 0% 60%;
+  .inner_1 {
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.288);
+    padding: 8vh 7vw;
+    .select_div {
+      width: 75vw;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
 
-//     .title {
-//       display: flex;
-//       justify-content: center;
-//       font-family: "Rowdies", cursive;
-//     }
+      h1 {
+        word-break: break-all;
+        white-space: nowrap;
+        position: relative;
+        margin-right: 30px;
+        font-family: "Anton", sans-serif;
+        font-size: 38px;
+      }
+      button {
+        white-space: nowrap;
+        word-break: break-all;
+        font-size: 16px;
+        background-color: transparent;
+        border: 1px solid #888;
+        border-radius: 30px;
+        padding: 10px 15px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background-color: #888;
+          color: white;
+        }
+        &.clicked {
+          background-color: #888;
+          color: white;
+        }
+      }
 
-//     .title-block {
-//       border: 1px solid black;
-//       font-family: "KoddiUDOnGothic-Regular";
-//       margin-top: 15px;
-//       font-size: 20px;
-//       display: flex;
-//       justify-content: space-around;
-//       .ranking {
-//       }
-//       .albumCover {
-//       }
+      .calendar {
+        position: absolute;
+        right: -3%;
+        width: 100px;
+        // height: 60px;
+        overflow: hidden;
+        text-align: center;
+        background-color: aliceblue;
+        border-radius: 15px;
+        .upper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 25px;
+          background-color: #c9d6ffca;
+          #month {
+            font-size: 20px;
+            color: #093732;
+          }
+        }
+        .lower {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 60px;
+          font-size: 16px;
+          #day {
+            font-size: 13px;
+            font-weight: 500;
+          }
+          #date {
+            font-size: 23px;
+            line-height: 1;
+          }
+          #year {
+            font-size: 13px;
+          }
+        }
+      }
+    }
 
-//       .song {
-//       }
+    #rank_inner_1 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      // height: 70vh;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 999;
 
-//       .singer {
-//       }
+      .rank_div {
+        font-family: "Anton", sans-serif;
+        overflow: hidden;
+        width: 14vw;
+        height: 50vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 20px;
 
-//       .album {
-//       }
-//     }
+        .text_div {
+          height: 25vh;
+          display: block;
+          h1 {
+            position: relative;
+            font-size: 45px;
+            color: #888;
+            letter-spacing: 1px;
+            font-family: "Anton", sans-serif;
 
-//     .chart-block_1 {
-//       .chart_div {
-//         display: flex;
-//         &:nth-child(1) {
-//           flex-basis: 100px;
-//         }
-//         &:nth-child(2) {
-//           flex-basis: 100px;
-//         }
-//         &:nth-child(3) {
-//           flex-basis: 100px;
-//         }
-//         &:nth-child(4) {
-//           flex-basis: 100px;
-//         }
-//         &:nth-child(5) {
-//           flex-basis: 100px;
-//         }
-//       }
-//     }
-//   }
-// }
+            &::after {
+              content: "";
+              display: block;
+              width: 25px;
+              border-bottom: 5px solid rgb(199, 85, 85);
+              border-radius: 20px;
+              margin: 15px 0px;
+            }
+          }
+          h2 {
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            width: 10vw;
+            height: 40px;
+          }
 
-.chart_section {
-  .inner {
+          h3 {
+            position: relative;
+            color: #aaa9a9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            width: 10vw;
+            height: 30px;
+          }
+
+          img {
+            position: relative;
+            border-radius: 8px;
+            width: 11vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    #rank_inner_2,
+    #rank_inner_3,
+    #rank_inner_4,
+    #rank_inner_5 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      // height: 70vh;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-around;
+
+      .rank_div {
+        font-family: "Anton", sans-serif;
+        overflow: hidden;
+        width: 14vw;
+        height: 50vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 20px;
+
+        .text_div {
+          width: 14vw;
+          height: 25vh;
+          display: block;
+          h1 {
+            position: relative;
+            font-size: 45px;
+            color: #888;
+            letter-spacing: 1px;
+            font-family: "Anton", sans-serif;
+
+            &::after {
+              content: "";
+              display: block;
+              width: 25px;
+              border-bottom: 5px solid rgb(199, 85, 85);
+              border-radius: 20px;
+              margin: 15px 0px;
+            }
+          }
+          h2 {
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            width: 10vw;
+            height: 40px;
+          }
+
+          h3 {
+            position: relative;
+            color: #aaa9a9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            width: 10vw;
+            height: 30px;
+          }
+
+          img {
+            position: relative;
+            height: 11vw;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    // .rank_inner_1.show,
+    // .rank_inner_2.show,
+    // .rank_inner_3.show,
+    // .rank_inner_4.show,
+    // .rank_inner_5.show {
+    //   opacity: 1;
+    // }
+    // .rank_inner_1.hide,
+    // .rank_inner_2.hide,
+    // .rank_inner_3.hide,
+    // .rank_inner_4.hide,
+    // .rank_inner_5.hide {
+    //   opacity: 0;
+    // }
+  }
+  #btn_bottom {
     position: absolute;
+    color: #888;
+    font-size: 35px;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    cursor: pointer;
+  }
+}
+
+.chart_section_2 {
+  height: 100vh;
+  position: relative;
+
+  .inner_2 {
+    position: relative;
     width: 80vw;
     top: 50%;
     left: 50%;
@@ -158,13 +351,13 @@ header {
     padding: 0 50px;
 
     .rank_list {
-      // margin: 0 -43px;
       position: relative;
       top: 50%;
       transform: translateY(-40%);
 
       h1 {
-        font-family: "KoddiUDOnGothic-Regular";
+        font-family: "Anton", sans-serif;
+        letter-spacing: 1px;
         margin: 0 30px;
         span {
           color: black;
@@ -243,5 +436,30 @@ header {
         }
       }
     }
+  }
+  #btn_top {
+    position: absolute;
+    color: #888;
+    font-size: 35px;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    cursor: pointer;
+  }
+}
+
+@keyframes popup {
+  0% {
+    bottom: 20px;
+  }
+  20% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 30px;
   }
 }

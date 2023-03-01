@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,34 +15,13 @@ a {
   text-decoration: none;
 }
 
-@font-face {
-  font-family: "KoddiUDOnGothic-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 body {
   -ms-overflow-style: none;
+  background: linear-gradient(55deg, #c9d6ff, #e2e2e2);
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-figure {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -1;
-}
-figure img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 header {
@@ -87,8 +66,268 @@ header .inner a:nth-child(3) {
   font-size: 20px;
 }
 
-.chart_section .inner {
+.chart_section_1 {
+  height: 100vh;
+}
+.chart_section_1 .inner_1 {
+  border-radius: 10px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.288);
+  padding: 8vh 7vw;
+}
+.chart_section_1 .inner_1 .select_div {
+  width: 75vw;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.chart_section_1 .inner_1 .select_div h1 {
+  word-break: break-all;
+  white-space: nowrap;
+  position: relative;
+  margin-right: 30px;
+  font-family: "Anton", sans-serif;
+  font-size: 38px;
+}
+.chart_section_1 .inner_1 .select_div button {
+  white-space: nowrap;
+  word-break: break-all;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #888;
+  border-radius: 30px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chart_section_1 .inner_1 .select_div button:hover {
+  background-color: #888;
+  color: white;
+}
+.chart_section_1 .inner_1 .select_div button.clicked {
+  background-color: #888;
+  color: white;
+}
+.chart_section_1 .inner_1 .select_div .calendar {
   position: absolute;
+  right: -3%;
+  width: 100px;
+  overflow: hidden;
+  text-align: center;
+  background-color: aliceblue;
+  border-radius: 15px;
+}
+.chart_section_1 .inner_1 .select_div .calendar .upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  background-color: rgba(201, 214, 255, 0.7921568627);
+}
+.chart_section_1 .inner_1 .select_div .calendar .upper #month {
+  font-size: 20px;
+  color: #093732;
+}
+.chart_section_1 .inner_1 .select_div .calendar .lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  font-size: 16px;
+}
+.chart_section_1 .inner_1 .select_div .calendar .lower #day {
+  font-size: 13px;
+  font-weight: 500;
+}
+.chart_section_1 .inner_1 .select_div .calendar .lower #date {
+  font-size: 23px;
+  line-height: 1;
+}
+.chart_section_1 .inner_1 .select_div .calendar .lower #year {
+  font-size: 13px;
+}
+.chart_section_1 .inner_1 #rank_inner_1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 999;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div {
+  font-family: "Anton", sans-serif;
+  overflow: hidden;
+  width: 14vw;
+  height: 50vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 20px;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div {
+  height: 25vh;
+  display: block;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div h1 {
+  position: relative;
+  font-size: 45px;
+  color: #888;
+  letter-spacing: 1px;
+  font-family: "Anton", sans-serif;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div h1::after {
+  content: "";
+  display: block;
+  width: 25px;
+  border-bottom: 5px solid rgb(199, 85, 85);
+  border-radius: 20px;
+  margin: 15px 0px;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div h2 {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 10vw;
+  height: 40px;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div h3 {
+  position: relative;
+  color: #aaa9a9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 10vw;
+  height: 30px;
+}
+.chart_section_1 .inner_1 #rank_inner_1 .rank_div .text_div img {
+  position: relative;
+  border-radius: 8px;
+  width: 11vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.chart_section_1 .inner_1 #rank_inner_2,
+.chart_section_1 .inner_1 #rank_inner_3,
+.chart_section_1 .inner_1 #rank_inner_4,
+.chart_section_1 .inner_1 #rank_inner_5 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div {
+  font-family: "Anton", sans-serif;
+  overflow: hidden;
+  width: 14vw;
+  height: 50vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 20px;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div {
+  width: 14vw;
+  height: 25vh;
+  display: block;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div h1,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div h1,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div h1,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div h1 {
+  position: relative;
+  font-size: 45px;
+  color: #888;
+  letter-spacing: 1px;
+  font-family: "Anton", sans-serif;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div h1::after,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div h1::after,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div h1::after,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div h1::after {
+  content: "";
+  display: block;
+  width: 25px;
+  border-bottom: 5px solid rgb(199, 85, 85);
+  border-radius: 20px;
+  margin: 15px 0px;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div h2,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div h2,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div h2,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div h2 {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 10vw;
+  height: 40px;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div h3,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div h3,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div h3,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div h3 {
+  position: relative;
+  color: #aaa9a9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 10vw;
+  height: 30px;
+}
+.chart_section_1 .inner_1 #rank_inner_2 .rank_div .text_div img,
+.chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div img,
+.chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div img,
+.chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div img {
+  position: relative;
+  height: 11vw;
+  margin-top: 20px;
+}
+.chart_section_1 #btn_bottom {
+  position: absolute;
+  color: #888;
+  font-size: 35px;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: popup;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+.chart_section_2 {
+  height: 100vh;
+  position: relative;
+}
+.chart_section_2 .inner_2 {
+  position: relative;
   width: 80vw;
   top: 50%;
   left: 50%;
@@ -98,35 +337,36 @@ header .inner a:nth-child(3) {
   border-radius: 20px;
   padding: 0 50px;
 }
-.chart_section .inner .rank_list {
+.chart_section_2 .inner_2 .rank_list {
   position: relative;
   top: 50%;
   transform: translateY(-40%);
 }
-.chart_section .inner .rank_list h1 {
-  font-family: "KoddiUDOnGothic-Regular";
+.chart_section_2 .inner_2 .rank_list h1 {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
   margin: 0 30px;
 }
-.chart_section .inner .rank_list h1 span {
+.chart_section_2 .inner_2 .rank_list h1 span {
   color: black;
   font-size: 25px;
 }
-.chart_section .inner .rank_list .scroll_list {
+.chart_section_2 .inner_2 .rank_list .scroll_list {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
 }
-.chart_section .inner .rank_list .scroll_list .list_item {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item {
   position: relative;
   display: flex;
   vertical-align: top;
   padding: 0;
   box-sizing: border-box;
 }
-.chart_section .inner .rank_list .scroll_list .list_item ul {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul {
   margin: 0 20px;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row {
   background-color: white;
   margin: 10px 0;
   border-radius: 10px;
@@ -137,16 +377,16 @@ header .inner a:nth-child(3) {
   vertical-align: middle;
   flex-wrap: wrap;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .album {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .album {
   white-space: normal;
   display: table-cell;
   width: 50px;
   vertical-align: middle;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .album img {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .album img {
   width: 50px;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .rank {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .rank {
   display: table-cell;
   width: 31px;
   padding: 5px 0 0 9px;
@@ -154,20 +394,45 @@ header .inner a:nth-child(3) {
   padding-top: 5px;
   color: black;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .song_area {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area {
   display: table-cell;
   padding: 4px 20px 0 8px;
   vertical-align: top;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .song_area .song {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area .song {
   height: 20px;
   color: black;
 }
-.chart_section .inner .rank_list .scroll_list .list_item .list_track_row .song_area .singer {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area .singer {
   height: 19px;
   margin-top: 3px;
   font-size: 15px;
   line-height: 19px;
   letter-spacing: -0.1px;
   color: #888;
+}
+.chart_section_2 #btn_top {
+  position: absolute;
+  color: #888;
+  font-size: 35px;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: popup;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes popup {
+  0% {
+    bottom: 20px;
+  }
+  20% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 30px;
+  }
 }/*# sourceMappingURL=chart.css.map */
