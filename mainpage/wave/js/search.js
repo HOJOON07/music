@@ -1,17 +1,179 @@
-// 초기에는 1~5위까지 나오게
-// 1. 인풋창에 밸류를 입력한다.
-// 2. 조건은 밸류의 길이가 1 이상이면서 focus가 되었을때
-// 3. json data 에서 (배열임) 인덱스를 돌면서 문자열을 검색하고 인풋에
-// 입력된 밸류를 포함한 인덱스를 반환한다.
-// 4.그거를 하이드 해놓은 div창에 넣는다.
+const data = song_data; //멜론차트 데이터
 
-// 레이아웃은 div 하나 넣어놓고
-// 거기에 조건에 맞는 div 하나씩 넣어주면 되겠다
-// 전체 Div크기를 정해주고 그담에 들어가는 div는 부모 가로값의 100퍼센트를 주고
-// 클릭이벤트 줘서 모달창
-// 데이터도 uppercase로 인풋 밸류도 uppercase로s
-const chartRank = document.querySelector(".rank");
-const data = song_data;
-console.log(chartRank);
-var dupNode = chartRank.cloneNode(false);
-console.log(dupNode);
+const rank = document.querySelectorAll(".rank");
+const rankImg = document.querySelectorAll(".rankImg");
+const rankNumber = document.querySelectorAll(".rankNumber");
+const musicName = document.querySelectorAll(".musicName");
+const artistName = document.querySelectorAll(".artistName");
+const albumName = document.querySelectorAll(".albumName");
+const searchResult = document.querySelector(".searchResult");
+for (let i = 0; i < rank.length; i++) {
+  rank[i].setAttribute("id", data[i].id);
+  rankImg[i].setAttribute("src", data[i].albumCover);
+  rankNumber[i].innerHTML = i + 1;
+  musicName[i].innerHTML = data[i].song;
+  artistName[i].innerHTML = data[i].singer;
+}
+const arr = [];
+for (let i = 0; i < data.length; i++) {
+  const obj = {
+    singer: data[i].singer.toUpperCase(),
+    song: data[i].song.toUpperCase(),
+    id: data[i].id,
+  };
+  arr.push(obj);
+}
+
+const input = document.querySelector(".searchInput");
+const music = document.querySelector(".music");
+const singer = document.querySelector(".singer");
+const musicNoResult = document.querySelector(".musicNoResult");
+const singerNoResult = document.querySelector(".singerNoResult");
+
+input.addEventListener("keyup", function (e) {
+  const upValue = input.value.toUpperCase();
+  //대소문자 구분없는 데이터
+  const upSearchData = arr.filter((el) => el.song.search(upValue) !== -1);
+  const idArr = [];
+  upSearchData.forEach((el) => {
+    idArr.push(el.id);
+  });
+
+  const searchData = [];
+  for (let i = 0; i < song_data.length; i++) {
+    for (let j = 0; j < idArr.length; j++) {
+      if (song_data[i].id == idArr[j]) {
+        searchData.push(song_data[i]);
+      }
+    }
+  }
+
+  if (searchData.length === 0) music.innerHTML = "곡 검색 결과가 없습니다.";
+  // if (searchData.length === 0) music.innerHTML = "";
+  // if (searchData.length === 0) searchResult.remove();
+  // if (searchData.length === 0) {
+  //   musicNoResult.classList.add(show);
+  // } else {
+  //   musicNoResult.classList.remove(show);
+  // }
+
+  // for 문의 if 문
+  for (let i = 0; i < searchData.length; i++) {
+    if (i === 0) music.innerHTML = "";
+    //1
+    const musicResultWrap = document.createElement("div");
+    musicResultWrap.classList.add("musicResultWrap");
+    musicResultWrap.setAttribute("id", searchData[i].id);
+    //2
+    const resultAlbumCover = document.createElement("div");
+    resultAlbumCover.classList.add("resultAlbumCover");
+    //3
+    const resultAlbumImg = document.createElement("img");
+    resultAlbumImg.classList.add("resultAlbumImg");
+    resultAlbumImg.setAttribute("src", searchData[i].albumCover);
+    resultAlbumCover.append(resultAlbumImg);
+    //4
+    const resultMusicName = document.createElement("p");
+    resultMusicName.classList.add("resultMusicName");
+    resultMusicName.textContent = searchData[i].song;
+    //5
+    const resultArtistName = document.createElement("p");
+    resultArtistName.classList.add("resultArtistName");
+    resultArtistName.textContent = searchData[i].singer;
+
+    musicResultWrap.append(resultAlbumCover);
+    musicResultWrap.append(resultMusicName);
+    musicResultWrap.append(resultArtistName);
+    music.append(musicResultWrap);
+  }
+});
+
+input.addEventListener("keyup", function (e) {
+  if (e.target.value.length === 0) {
+    music.classList.add("hide");
+  } else {
+    music.classList.remove("hide");
+  }
+});
+input.addEventListener("keyup", function (e) {
+  if (e.target.value.length > 0) {
+    for (let i = 0; i < rank.length; i++) {
+      rank[i].classList.add("hide");
+    }
+  } else {
+    for (let i = 0; i < rank.length; i++) {
+      rank[i].classList.remove("hide");
+    }
+  }
+});
+
+input.addEventListener("keyup", function (e) {
+  const upValue = input.value.toUpperCase();
+  //대소문자 구분없는 데이터
+  const upSearchData = arr.filter((el) => el.singer.search(upValue) !== -1);
+  const idArr = [];
+  upSearchData.forEach((el) => {
+    idArr.push(el.id);
+  });
+
+  const searchData = [];
+  for (let i = 0; i < song_data.length; i++) {
+    for (let j = 0; j < idArr.length; j++) {
+      if (song_data[i].id == idArr[j]) {
+        searchData.push(song_data[i]);
+      }
+    }
+  }
+  // console.log(searchData);
+
+  if (searchData.length === 0) singer.innerHTML = "가수 검색 결과가 없습니다.";
+  // if (searchData.length === 0) singer.innerHTML = "";
+  // if (searchData.length === 0) searchResult.remove();
+  // if (searchData.length === 0) {
+  //   singerNoResult.classList.add(show);
+  // } else {
+  //   singerNoResult.classList.remove(show);
+  // }
+
+  // for 문의 if 문
+  for (let i = 0; i < searchData.length; i++) {
+    if (i === 0) singer.innerHTML = "";
+    //1
+    const singerResultWrap = document.createElement("div");
+    singerResultWrap.classList.add("singerResultWrap");
+    singerResultWrap.setAttribute("id", searchData[i].id);
+    //2
+    const resultSingerAlbumCover = document.createElement("div");
+    resultSingerAlbumCover.classList.add("resultSingerAlbumCover");
+    //3
+    const resultSingerAlbumImg = document.createElement("img");
+    resultSingerAlbumImg.classList.add("resultSingerAlbumImg");
+    resultSingerAlbumImg.setAttribute("src", searchData[i].albumCover);
+    resultSingerAlbumCover.append(resultSingerAlbumImg);
+    //4
+    const resultSingerMusicName = document.createElement("p");
+    resultSingerMusicName.classList.add("resultSingerMusicName");
+    resultSingerMusicName.textContent = searchData[i].song;
+    //5
+    const resultSingerArtistName = document.createElement("p");
+    resultSingerArtistName.classList.add("resultSingerArtistName");
+    resultSingerArtistName.textContent = searchData[i].singer;
+
+    singerResultWrap.append(resultSingerAlbumCover);
+    singerResultWrap.append(resultSingerMusicName);
+    singerResultWrap.append(resultSingerArtistName);
+    singer.append(singerResultWrap);
+  }
+  // if (searchData.length === 0) artistResultWrap.innerHTML = "";
+});
+
+input.addEventListener("focus", function () {
+  searchResult.classList.add("show");
+});
+music.addEventListener("click", function () {
+  searchResult.classList.add("show");
+});
+
+input.addEventListener("blur", function () {
+  searchResult.classList.remove("show");
+});
