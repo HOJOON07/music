@@ -1,71 +1,75 @@
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
-header {
-  top: 0;
-  width: 100%;
-  position: fixed;
+
+.navbar {
   display: flex;
-  z-index: 1;
+  position: fixed;
+  width: 100%;
   height: 7vh;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
   background-color: white;
   border-bottom: 1px solid rgb(215, 208, 208);
 }
-
-header .headerinner {
-  width: 100%;
+.navbar .leftBox {
+  display: flex;
+  padding-left: 40px;    
+  align-items: center;
+}
+.navbar .leftBox .homeIcon {
+  font-size: 20px;
+  padding-right: 30px;
+}
+.navbar .leftBox .homeIcon i{
+  color: rgb(155, 155, 155);
+  font-size: 20px;
+}
+.navbar .leftBox .searchWrap {
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
+  border: 1px solid darkgray;
+  border-radius: 15px;
+  width: 280px;
 }
-
-header .headerinner a {
-  position: relative;
+.navbar .leftBox .searchWrap .searchInput {
+  outline: none;
+  display: block;
+  margin-left: 10px;
+  border: none;
+  width: 220px;
+  height: 85%;
+  font-size: 15px;
+  background-color: transparent;
 }
-
-/* HOME icon */
-header .headerinner a:nth-child(1) {
-  position: absolute;
-  left: 0;
-  color: rgb(155, 155, 155);
-  margin-left: 30px;
-  font-size: 25px;
+.navbar .leftBox .searchWrap .searchIconWrap {
+  align-items: center;
 }
-
-/* QR-CODE icon */
-header .headerinner a:nth-child(2) {
-  position: absolute;
-  right: 0;
-  margin-right: 100px;
+.navbar .leftBox .searchWrap .searchIconWrap .fa-solid {
+  display: block;
+  font-size: 15px;
+  color: darkgray;
+  margin-left: 10px;
+}
+.navbar .rightBox {
+  font-size: 20px;
+  width: 100px;
+  justify-content: space-around;
+  display: flex;
+  margin-right: 40px;
+  align-items: center;
+}
+.navbar .rightBox .qrIcon {
+  font-size: 20px;
+}
+.navbar .rightBox .qrIcon i,
+.fullScreenIcon i{
   color: rgb(155, 155, 155);
   font-size: 20px;
 }
 
-/* Screen확장 icon */
-header .headerinner a:nth-child(3) {
-  position: absolute;
-  right: 0;
-  color: rgb(155, 155, 155);
-  margin-right: 50px;
-  font-size: 20px;
-}
-
-.main-1 {
-  position: relative;
-  width: 100%;
-  top: 80px;
-}
-
-.main-1 .headerinner {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.main-1 .headerinner a {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  bottom: 10%;
-}
+/*# sourceMappingURL=header.css.map */
