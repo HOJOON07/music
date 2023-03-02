@@ -61,10 +61,12 @@ client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
       song: song,
       album: album,
       //like: like,
+      id: i,
     };
     //console.log(obj);
     arr.push(obj);
   }
+  console.log(arr);
   const json = JSON.stringify(arr);
   const jsonWithVar = "song_data = " + json;
   fs.writeFileSync("item.json", jsonWithVar);
