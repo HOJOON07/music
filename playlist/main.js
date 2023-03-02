@@ -1,7 +1,7 @@
 
 let allMusic = [
 {
-    name : "Ditto",
+    name : "Hype boy",
     artist : "NewJeans",
     img : "art1",
     audio : "name1",
