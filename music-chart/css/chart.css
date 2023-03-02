@@ -233,6 +233,7 @@ header .inner a:nth-child(3) {
   padding: 0 50px;
   display: flex;
   justify-content: space-around;
+  z-index: 999;
 }
 .chart_section_1 .inner_1 #rank_inner_2 .rank_div,
 .chart_section_1 .inner_1 #rank_inner_3 .rank_div,
@@ -250,7 +251,6 @@ header .inner a:nth-child(3) {
 .chart_section_1 .inner_1 #rank_inner_3 .rank_div .text_div,
 .chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div,
 .chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div {
-  width: 14vw;
   height: 25vh;
   display: block;
 }
@@ -305,8 +305,11 @@ header .inner a:nth-child(3) {
 .chart_section_1 .inner_1 #rank_inner_4 .rank_div .text_div img,
 .chart_section_1 .inner_1 #rank_inner_5 .rank_div .text_div img {
   position: relative;
-  height: 11vw;
-  margin-top: 20px;
+  border-radius: 8px;
+  width: 11vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .chart_section_1 #btn_bottom {
   position: absolute;
@@ -340,12 +343,13 @@ header .inner a:nth-child(3) {
 .chart_section_2 .inner_2 .rank_list {
   position: relative;
   top: 50%;
-  transform: translateY(-40%);
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
 .chart_section_2 .inner_2 .rank_list h1 {
   font-family: "Anton", sans-serif;
   letter-spacing: 1px;
-  margin: 0 30px;
+  padding: 10px 40px;
 }
 .chart_section_2 .inner_2 .rank_list h1 span {
   color: black;
@@ -366,50 +370,64 @@ header .inner a:nth-child(3) {
 .chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul {
   margin: 0 20px;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row {
   background-color: white;
   margin: 10px 0;
   border-radius: 10px;
   display: table;
-  width: 100%;
+  width: 22.5vw;
   height: 50px;
   padding: 10px 10px;
   vertical-align: middle;
   flex-wrap: wrap;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .album {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .album {
   white-space: normal;
   display: table-cell;
   width: 50px;
   vertical-align: middle;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .album img {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .album img {
   width: 50px;
+  border-radius: 3px;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .rank {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .rank {
   display: table-cell;
   width: 31px;
   padding: 5px 0 0 9px;
   text-align: center;
   padding-top: 5px;
-  color: black;
+  color: rgb(76, 76, 76);
+  font-weight: bold;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .song_area {
   display: table-cell;
   padding: 4px 20px 0 8px;
   vertical-align: top;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area .song {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .song_area .song {
   height: 20px;
   color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 15vw;
+  height: 20px;
 }
-.chart_section_2 .inner_2 .rank_list .scroll_list .list_item .list_track_row .song_area .singer {
+.chart_section_2 .inner_2 .rank_list .scroll_list .list_item ul .list_track_row .song_area .singer {
   height: 19px;
   margin-top: 3px;
   font-size: 15px;
   line-height: 19px;
   letter-spacing: -0.1px;
   color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 13vw;
+  height: 20px;
 }
 .chart_section_2 #btn_top {
   position: absolute;
