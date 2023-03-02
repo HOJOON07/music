@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 * {
   margin: 0;
@@ -24,46 +23,60 @@ body {
   display: none;
 }
 
-header {
-  top: 0;
-  width: 100%;
-  position: fixed;
+.navbar {
   display: flex;
-  z-index: 1;
-  height: 7vh;
-}
-header .inner {
+  position: fixed;
   width: 100%;
+  height: 80px;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .leftBox {
+  display: flex;
+  padding-left: 40px;
+}
+.navbar .leftBox .homeIcon {
+  font-size: 28px;
+  padding-right: 30px;
+}
+.navbar .leftBox .searchWrap {
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
+  border: 1px solid darkgray;
+  border-radius: 15px;
+  width: 280px;
 }
-header .inner a {
-  position: relative;
-  /* HOME icon */
-  /* QR-CODE icon */
-  /* Screen확장 icon */
+.navbar .leftBox .searchWrap .searchInput {
+  outline: none;
+  display: block;
+  margin-left: 10px;
+  border: none;
+  width: 220px;
+  height: 85%;
+  font-size: 15px;
+  background-color: transparent;
 }
-header .inner a:nth-child(1) {
-  position: absolute;
-  left: 0;
-  color: rgb(155, 155, 155);
-  margin-left: 30px;
-  font-size: 25px;
+.navbar .leftBox .searchWrap .searchIconWrap {
+  align-items: center;
 }
-header .inner a:nth-child(2) {
-  position: absolute;
-  right: 0;
-  margin-right: 100px;
-  color: rgb(155, 155, 155);
-  font-size: 20px;
+.navbar .leftBox .searchWrap .searchIconWrap .fa-solid {
+  display: block;
+  font-size: 18px;
+  color: darkgray;
+  margin-left: 10px;
 }
-header .inner a:nth-child(3) {
-  position: absolute;
-  right: 0;
-  color: rgb(155, 155, 155);
-  margin-right: 50px;
-  font-size: 20px;
+.navbar .rightBox {
+  font-size: 24px;
+  width: 100px;
+  justify-content: space-around;
+  display: flex;
+  margin-right: 40px;
+}
+.navbar .rightBox .qrIcon {
+  font-size: 28px;
 }
 
 .chart_section_1 {

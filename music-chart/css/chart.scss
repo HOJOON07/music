@@ -18,49 +18,110 @@ body {
 //VIDEO
 
 // HEADER
-header {
-  top: 0;
-  width: 100%;
-  position: fixed;
+// header {
+//   top: 0;
+//   width: 100%;
+//   position: fixed;
+//   display: flex;
+//   z-index: 1;
+//   height: 7vh;
+
+//   .inner {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+
+//     a {
+//       position: relative;
+
+//       /* HOME icon */
+//       &:nth-child(1) {
+//         position: absolute;
+//         left: 0;
+//         color: rgb(155, 155, 155);
+//         margin-left: 30px;
+//         font-size: 25px;
+//       }
+
+//       /* QR-CODE icon */
+//       &:nth-child(2) {
+//         position: absolute;
+//         right: 0;
+//         margin-right: 100px;
+//         color: rgb(155, 155, 155);
+//         font-size: 20px;
+//       }
+
+//       /* Screen확장 icon */
+//       &:nth-child(3) {
+//         position: absolute;
+//         right: 0;
+//         color: rgb(155, 155, 155);
+//         margin-right: 50px;
+//         font-size: 20px;
+//       }
+//     }
+//   }
+// }
+
+.navbar {
   display: flex;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
   z-index: 1;
-  height: 7vh;
+  // border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
 
-  .inner {
-    width: 100%;
+  .leftBox {
     display: flex;
-    align-items: center;
-    position: relative;
+    padding-left: 40px;
 
-    a {
+    .homeIcon {
+      font-size: 28px;
+      padding-right: 30px;
+    }
+
+    .searchWrap {
       position: relative;
-
-      /* HOME icon */
-      &:nth-child(1) {
-        position: absolute;
-        left: 0;
-        color: rgb(155, 155, 155);
-        margin-left: 30px;
-        font-size: 25px;
+      display: flex;
+      align-items: center;
+      border: 1px solid darkgray;
+      border-radius: 15px;
+      width: 280px;
+      .searchInput {
+        outline: none;
+        display: block;
+        margin-left: 10px;
+        border: none;
+        width: 220px;
+        height: 85%;
+        font-size: 15px;
+        background-color: transparent;
       }
-
-      /* QR-CODE icon */
-      &:nth-child(2) {
-        position: absolute;
-        right: 0;
-        margin-right: 100px;
-        color: rgb(155, 155, 155);
-        font-size: 20px;
+      .searchIconWrap {
+        align-items: center;
+        .fa-solid {
+          display: block;
+          font-size: 18px;
+          color: darkgray;
+          margin-left: 10px;
+        }
       }
+    }
+  }
+  .rightBox {
+    font-size: 24px;
+    width: 100px;
+    justify-content: space-around;
+    display: flex;
+    margin-right: 40px;
 
-      /* Screen확장 icon */
-      &:nth-child(3) {
-        position: absolute;
-        right: 0;
-        color: rgb(155, 155, 155);
-        margin-right: 50px;
-        font-size: 20px;
-      }
+    .qrIcon {
+      font-size: 28px;
     }
   }
 }
