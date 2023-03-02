@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <!-- 메인 css -->
     <link rel="stylesheet" href="./css/wave.css" />
-
+    <!-- 네비게이션 바 css -->
+    <link rel="stylesheet" href="../select-page/css/header.css" />
+    <!-- 셀렉트 페이지 css -->
+    <link rel="stylesheet" href="../select-page/css/select.css" />
     <!-- 제이 쿼리 CDN -->
     <script
       defer
@@ -25,22 +28,172 @@
 
     <script defer src="./js/wave.js"></script>
 
-    <!-- Title -->
+    <!-- Title Js -->
     <script defer src="./js/title.js"></script>
+
+    <!-- 네비게이션 바 JS -->
+    <script defer src="../select-page/js/header.js"></script>
+
+    <!-- 셀렉트 JS -->
+    <script defer src="../wave/js/select.js"></script>
+
+    <!-- 검색창 JS -->
+    <script defer src="./js/search.js"></script>
 
     <title>wave</title>
   </head>
   <body>
+    <!-- 네비게이션 바  -->
+    <!-- <div class="navbar">
+      <div class="inner">
+        <div class="homeIcon">
+          <a href="./index.html"><i class="fa-solid fa-house">홈</i></a>
+        </div>
+        <div class="searchWrap">
+          <input type="text" placeholder="실시간 차트 검색" />
+        </div>
+        <div class="right">
+          <a href="#"><i class="fa-solid fa-qrcode">qr</i></a>
+          <a href="#"
+            ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
+            >전체</a
+          >
+        </div>
+      </div>
+    </div> -->
+    <div class="navbar">
+      <div class="leftBox">
+        <div class="homeIcon">
+          <a href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="searchWrap">
+          <input class="searchInput" type="text" placeholder="노래 검색" />
+        </div>
+      </div>
+      <div class="rightBox">
+        <div class="qrIcon">
+          <a href="#">
+            <i class="fa-solid fa-qrcode"></i>
+          </a>
+        </div>
+        <div class="fullScreenIcon">
+          <a href="#">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 웨이브 페이지 -->
     <header class="header">
       <div class="titleWrap">
         <p class="typeText"></p>
-        <!-- <p class="firstTitle">SongHeeHo</p>
-        <p class="secondTitle">First Team Project</p>
-        <p class="thirdTitle">html, css, Javascript</p>
-        <p class="forthTitle">MusicPlayer</p> -->
+        <!-- ///// -->
+        <!-- 셀렉트 페이지 -->
+        <div class="select-page hide" class="slide-in hide">
+          <!-- 첫번째 음악 선택 카드 -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="card-music-front">
+                <figure>
+                  <div class="img-music-bg"></div>
+                  <img src="../select-page/img/recordImg.png" />
+                  <figcaption>Music</figcaption>
+                </figure>
+              </div>
+
+              <div class="card-music-back">
+                <figure>
+                  <div class="img-music-bg"></div>
+                </figure>
+
+                <a class="musicBtn" onclick="location.href='music.html'">
+                  Music
+                </a>
+
+                <div class="design-container">
+                  <span class="design design--1"></span>
+                  <span class="design design--2"></span>
+                  <span class="design design--3"></span>
+                  <span class="design design--4"></span>
+                  <span class="design design--5"></span>
+                  <span class="design design--6"></span>
+                  <span class="design design--7"></span>
+                  <span class="design design--8"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 두번째 음악 선택 카드 -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="card-profile-front">
+                <figure>
+                  <div class="img-profile-bg"></div>
+                  <img src="../select-page/img/profile.png" />
+                  <figcaption>Profile</figcaption>
+                </figure>
+              </div>
+
+              <div class="card-profile-back">
+                <figure>
+                  <div class="img-profile-bg"></div>
+                </figure>
+
+                <a class="profileBtn" onclick="location.href='profile.html'">
+                  Profile
+                </a>
+
+                <div class="design-container">
+                  <span class="design design--1"></span>
+                  <span class="design design--2"></span>
+                  <span class="design design--3"></span>
+                  <span class="design design--4"></span>
+                  <span class="design design--5"></span>
+                  <span class="design design--6"></span>
+                  <span class="design design--7"></span>
+                  <span class="design design--8"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 세번째 음악 선택 카드 -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="card-ranking-front">
+                <figure>
+                  <div class="img-ranking-bg"></div>
+                  <img src="../select-page/img/crown.png" />
+                  <figcaption>Ranking</figcaption>
+                </figure>
+              </div>
+
+              <div class="card-ranking-back">
+                <figure>
+                  <div class="img-ranking-bg"></div>
+                </figure>
+
+                <a class="profileBtn" onclick="location.href='ranking.html'">
+                  Ranking
+                </a>
+
+                <div class="design-container">
+                  <span class="design design--1"></span>
+                  <span class="design design--2"></span>
+                  <span class="design design--3"></span>
+                  <span class="design design--4"></span>
+                  <span class="design design--5"></span>
+                  <span class="design design--6"></span>
+                  <span class="design design--7"></span>
+                  <span class="design design--8"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 첫번재 애니메이션 -> transition 주면서 서서히 songheeho나타나게 -->
-      <!-- first team project, javascript,music player -->
     </header>
     <div class="canvas-wrap">
       <canvas id="canvas"></canvas>
