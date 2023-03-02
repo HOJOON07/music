@@ -61,7 +61,7 @@ a {
 }
 
 .swiper-wrapper .swiper-slide {
-  width: 500px;
+  width: 300px;
   height: 500px;
   position: relative;
   top: 50%;
@@ -98,7 +98,7 @@ a {
   background-color: #fff;
   border-radius: 30px;
 }
-@keyframes ani {
+/* @keyframes ani {
   0% {
     opacity: 0;
     transform: scale(1);
@@ -110,7 +110,7 @@ a {
     opacity: 0;
     transform: scale(1.4);
   }
-}
+} */
 .wrap .swiper-wrapper .swiper-slide-active .inner::before {
   animation: ani 1s ease 1;
 }
@@ -144,7 +144,7 @@ a {
 
 .wrap .swiper-pagination-fraction {
   bottom: auto;
-  top: 50px;
+  top: 10vh;
   left: auto;
   right: 50px;
   width: auto;
