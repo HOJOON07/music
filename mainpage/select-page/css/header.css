@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +20,7 @@ body {
 .navbar .leftBox {
   display: flex;
   padding-left: 40px;
+  align-items: center;
 }
 .navbar .leftBox .homeIcon {
   font-size: 28px;
@@ -23,30 +28,151 @@ body {
 }
 .navbar .leftBox .searchWrap {
   position: relative;
+}
+.navbar .leftBox .searchWrap .inputWrap {
+  height: 35px;
+  position: relative;
   display: flex;
   align-items: center;
   border: 1px solid darkgray;
   border-radius: 15px;
   width: 280px;
 }
-.navbar .leftBox .searchWrap .searchInput {
+.navbar .leftBox .searchWrap .inputWrap .searchInput {
   outline: none;
   display: block;
-  margin-left: 10px;
   border: none;
+  margin-left: 10px;
   width: 220px;
   height: 85%;
   font-size: 15px;
   background-color: transparent;
 }
-.navbar .leftBox .searchWrap .searchIconWrap {
+.navbar .leftBox .searchWrap .inputWrap .searchIconWrap {
   align-items: center;
 }
-.navbar .leftBox .searchWrap .searchIconWrap .fa-solid {
+.navbar .leftBox .searchWrap .inputWrap .searchIconWrap .fa-solid {
   display: block;
   font-size: 18px;
   color: darkgray;
   margin-left: 10px;
+}
+.navbar .leftBox .searchWrap .searchResult {
+  position: absolute;
+  width: 280px;
+  margin-top: 5px;
+  border: 1px solid darkgray;
+  border-radius: 15px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank {
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .rankImgWrap {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin-right: 2px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .rankImgWrap .rankImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .rankNumber {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .musicName {
+  width: 105px;
+  font-size: 14px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .artistName {
+  width: 80px;
+  font-size: 14px;
+}
+.navbar .leftBox .searchWrap .searchResult .chartRank .rank .albumName {
+  font-size: 14px;
+}
+.navbar .leftBox .searchWrap .searchResult .artist {
+  text-align: center;
+}
+.navbar .leftBox .searchWrap .searchResult .artist .artistResultWrap {
+  display: flex;
+  align-items: center;
+}
+.navbar .leftBox .searchWrap .searchResult .artist .artistResultWrap .resultMusicName {
+  text-align: center;
+  width: 130px;
+}
+.navbar .leftBox .searchWrap .searchResult .artist .artistResultWrap .resultArtistName {
+  text-align: center;
+  width: 115px;
+}
+.navbar .leftBox .searchWrap .searchResult .artist .artistResultWrap .resultAlbumCover {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.navbar .leftBox .searchWrap .searchResult .artist .artistResultWrap .resultAlbumCover .resultAlbumImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.navbar .leftBox .searchWrap .searchResult .music {
+  text-align: center;
+}
+.navbar .leftBox .searchWrap .searchResult .music .artistResultWrap {
+  display: flex;
+  align-items: center;
+}
+.navbar .leftBox .searchWrap .searchResult .music .artistResultWrap .resultMusicName {
+  text-align: center;
+  width: 130px;
+}
+.navbar .leftBox .searchWrap .searchResult .music .artistResultWrap .resultArtistName {
+  text-align: center;
+  width: 115px;
+}
+.navbar .leftBox .searchWrap .searchResult .music .artistResultWrap .resultAlbumCover {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.navbar .leftBox .searchWrap .searchResult .music .artistResultWrap .resultAlbumCover .resultAlbumImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.navbar .leftBox .searchWrap .searchResult .album {
+  text-align: center;
+}
+.navbar .leftBox .searchWrap .searchResult .album .artistResultWrap {
+  display: flex;
+  align-items: center;
+}
+.navbar .leftBox .searchWrap .searchResult .album .artistResultWrap .resultMusicName {
+  text-align: center;
+  width: 130px;
+}
+.navbar .leftBox .searchWrap .searchResult .album .artistResultWrap .resultArtistName {
+  text-align: center;
+  width: 115px;
+}
+.navbar .leftBox .searchWrap .searchResult .album .artistResultWrap .resultAlbumCover {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.navbar .leftBox .searchWrap .searchResult .album .artistResultWrap .resultAlbumCover .resultAlbumImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .navbar .rightBox {
   font-size: 24px;

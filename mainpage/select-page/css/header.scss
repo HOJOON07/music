@@ -1,53 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
 }
-
-// // HEADER
-// .navbar {
-//   top: 0;
-//   width: 100%;
-//   position: fixed;
-//   display: flex;
-//   z-index: 1;
-//   height: 7vh;
-
-//   .inner {
-//     width: 100%;
-//     // display: flex;
-//     align-items: center;
-//     position: relative;
-
-//     a {
-//       /* HOME icon */
-//       &:nth-child(1) {
-//         // position: absolute;
-//         // left: 0;
-//         color: rgb(155, 155, 155);
-//         // margin-left: 30px;
-//         font-size: 25px;
-//       }
-
-//       /* QR-CODE icon */
-//       &:nth-child(2) {
-//         // position: absolute;
-//         // right: 0;
-//         // margin-right: 100px;
-//         color: rgb(155, 155, 155);
-//         font-size: 20px;
-//       }
-
-//       /* Screen확장 icon */
-//       &:nth-child(3) {
-//         // position: absolute;
-//         // right: 0;
-//         color: rgb(155, 155, 155);
-//         // margin-right: 50px;
-//         font-size: 20px;
-//       }
-//     }
-//   }
-// }
 
 .navbar {
   display: flex;
@@ -63,36 +20,163 @@ body {
   .leftBox {
     display: flex;
     padding-left: 40px;
+    align-items: center;
 
     .homeIcon {
       font-size: 28px;
       padding-right: 30px;
     }
 
+    // 검색창
     .searchWrap {
       position: relative;
-      display: flex;
-      align-items: center;
-      border: 1px solid darkgray;
-      border-radius: 15px;
-      width: 280px;
-      .searchInput {
-        outline: none;
-        display: block;
-        margin-left: 10px;
-        border: none;
-        width: 220px;
-        height: 85%;
-        font-size: 15px;
-        background-color: transparent;
-      }
-      .searchIconWrap {
+      .inputWrap {
+        height: 35px;
+        position: relative;
+        display: flex;
         align-items: center;
-        .fa-solid {
+        border: 1px solid darkgray;
+        border-radius: 15px;
+        width: 280px;
+
+        .searchInput {
+          outline: none;
           display: block;
-          font-size: 18px;
-          color: darkgray;
+          border: none;
           margin-left: 10px;
+          width: 220px;
+          height: 85%;
+          font-size: 15px;
+          background-color: transparent;
+        }
+        .searchIconWrap {
+          align-items: center;
+          .fa-solid {
+            display: block;
+            font-size: 18px;
+            color: darkgray;
+            margin-left: 10px;
+          }
+        }
+      }
+      //여기서부터 검색 결과 창
+      .searchResult {
+        position: absolute;
+        width: 280px;
+        margin-top: 5px;
+        border: 1px solid darkgray;
+        border-radius: 15px;
+
+        .chartRank {
+          .rank {
+            display: flex;
+            align-items: center;
+            height: 45px;
+
+            .rankImgWrap {
+              width: 35px;
+              height: 35px;
+              overflow: hidden;
+              margin-right: 2px;
+              .rankImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .rankNumber {
+              font-size: 16px;
+              margin-right: 5px;
+            }
+
+            .musicName {
+              width: 105px;
+              font-size: 14px;
+            }
+            .artistName {
+              width: 80px;
+              font-size: 14px;
+            }
+            .albumName {
+              font-size: 14px;
+            }
+          }
+        }
+        .artist {
+          text-align: center;
+          .artistResultWrap {
+            display: flex;
+            align-items: center;
+            .resultMusicName {
+              text-align: center;
+              width: 130px;
+            }
+            .resultArtistName {
+              text-align: center;
+              width: 115px;
+            }
+            .resultAlbumCover {
+              width: 35px;
+              height: 35px;
+              overflow: hidden;
+              .resultAlbumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+        .music {
+          text-align: center;
+          .artistResultWrap {
+            display: flex;
+            align-items: center;
+            .resultMusicName {
+              text-align: center;
+              width: 130px;
+            }
+            .resultArtistName {
+              text-align: center;
+              width: 115px;
+            }
+            .resultAlbumCover {
+              width: 35px;
+              height: 35px;
+              overflow: hidden;
+              .resultAlbumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+        .album {
+          text-align: center;
+          .artistResultWrap {
+            display: flex;
+            align-items: center;
+            .resultMusicName {
+              text-align: center;
+              width: 130px;
+            }
+            .resultArtistName {
+              text-align: center;
+              width: 115px;
+            }
+            .resultAlbumCover {
+              width: 35px;
+              height: 35px;
+              overflow: hidden;
+              .resultAlbumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
         }
       }
     }
@@ -109,13 +193,3 @@ body {
     }
   }
 }
-
-// .leftBox {
-//   // width: 40vw;
-//   display: flex;
-// }
-
-// .rightBox {
-//   // width: 60vw;
-//   display: flex;
-// }

@@ -9,7 +9,9 @@
 // 거기에 조건에 맞는 div 하나씩 넣어주면 되겠다
 // 전체 Div크기를 정해주고 그담에 들어가는 div는 부모 가로값의 100퍼센트를 주고
 // 클릭이벤트 줘서 모달창
-
-const input = document.querySelector("searchInput");
-// const chartData = require("../../../music-chart/item.json");
-console.log(song_data);
+// 데이터도 uppercase로 인풋 밸류도 uppercase로s
+const chartRank = document.querySelector(".rank");
+const data = song_data;
+console.log(chartRank);
+var dupNode = chartRank.cloneNode(false);
+console.log(dupNode);

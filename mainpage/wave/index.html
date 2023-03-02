@@ -46,33 +46,95 @@
     <title>wave</title>
   </head>
   <body>
-    <!-- 네비게이션 바  -->
-    <!-- <div class="navbar">
-      <div class="inner">
-        <div class="homeIcon">
-          <a href="./index.html"><i class="fa-solid fa-house">홈</i></a>
-        </div>
-        <div class="searchWrap">
-          <input type="text" placeholder="실시간 차트 검색" />
-        </div>
-        <div class="right">
-          <a href="#"><i class="fa-solid fa-qrcode">qr</i></a>
-          <a href="#"
-            ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
-            >전체</a
-          >
-        </div>
-      </div>
-    </div> -->
+    <!-- 상단 헤더 바 -->
     <div class="navbar">
       <div class="leftBox">
         <div class="homeIcon">
           <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
         </div>
         <div class="searchWrap">
-          <input class="searchInput" type="text" placeholder="노래 검색" />
-          <div class="searchIconWrap">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <!-- 검색창 -->
+          <div class="inputWrap">
+            <input class="searchInput" type="text" placeholder="노래 검색" />
+            <div class="searchIconWrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <!-- 숨겨진 검색 결과 -->
+          <div class="searchResult">
+            <!-- 랭크 1~5 -->
+            <div class="chartRank">
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img
+                    class="rankImg"
+                    src="https://file2.nocutnews.co.kr/newsroom/image/2023/01/04/202301041753444459_0.jpg"
+                    alt="테스트 송태섭 이미지"
+                  />
+                </div>
+                <p class="rankNumber">01</p>
+                <p class="musicName">곡명</p>
+                <p class="artistName">아티스트</p>
+                <p class="albumName">앨범</p>
+              </div>
+            </div>
+            <!-- 아티스트 -->
+            <div class="artist">
+              <p>아티스트</p>
+              <div class="artistResultWrap">
+                <div class="resultMusicName">
+                  <p class="resultMusicName_p">디토</p>
+                </div>
+                <div class="resultArtistName">
+                  <p class="resultArtistName_p">뉴진스</p>
+                </div>
+                <div class="resultAlbumCover">
+                  <img
+                    class="resultAlbumImg"
+                    src="https://file2.nocutnews.co.kr/newsroom/image/2023/01/04/202301041753444459_0.jpg"
+                    alt="테스트용 송태섭 이미지"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 곡 -->
+            <div class="music">
+              <p>곡</p>
+              <div class="artistResultWrap">
+                <div class="resultMusicName">
+                  <p class="resultMusicName_p">디토</p>
+                </div>
+                <div class="resultArtistName">
+                  <p class="resultArtistName_p">뉴진스</p>
+                </div>
+                <div class="resultAlbumCover">
+                  <img
+                    class="resultAlbumImg"
+                    src="https://file2.nocutnews.co.kr/newsroom/image/2023/01/04/202301041753444459_0.jpg"
+                    alt="테스트용 송태섭 이미지"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- 앨범 -->
+            <div class="album">
+              <p>앨범</p>
+              <div class="artistResultWrap">
+                <div class="resultMusicName">
+                  <p class="resultMusicName_p">디토</p>
+                </div>
+                <div class="resultArtistName">
+                  <p class="resultArtistName_p">뉴진스</p>
+                </div>
+                <div class="resultAlbumCover">
+                  <img
+                    class="resultAlbumImg"
+                    src="https://file2.nocutnews.co.kr/newsroom/image/2023/01/04/202301041753444459_0.jpg"
+                    alt="테스트용 송태섭 이미지"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -89,6 +151,28 @@
         </div>
       </div>
     </div>
+    <!-- <div class="searchResult">
+      <div class="chartRank">
+        <div class="rank1">
+          <div class="rankImgWrap">
+            <img src="" alt="" />
+          </div>
+          <p>1</p>
+          <p>곡명</p>
+          <p>아티스트</p>
+          <p>앨범</p>
+        </div>
+      </div>
+      <div class="artist">
+        <p>아티스트</p>
+      </div>
+      <div class="music">
+        <p>곡</p>
+      </div>
+      <div class="album">
+        <p>앨범</p>
+      </div>
+    </div> -->
 
     <!-- 웨이브 페이지 -->
     <header class="header">
