@@ -44,18 +44,35 @@
 
     <!-- JS 연결 -->
     <script defer src="./js/chart.js"></script>
+    <script defer src="../mainpage/select-page/js/header.js"></script>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
-      <div class="inner">
-        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-qrcode"></i></a>
-        <a href="#"
-          ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
-        ></a>
+    <div class="navbar">
+      <div class="leftBox">
+        <div class="homeIcon">
+          <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="searchWrap">
+          <input class="searchInput" type="text" placeholder="노래 검색" />
+          <div class="searchIconWrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
       </div>
-    </header>
+      <div class="rightBox">
+        <div class="qrIcon">
+          <a class="qrBtn" href="#">
+            <i class="fa-solid fa-qrcode"></i>
+          </a>
+        </div>
+        <div class="fullScreenIcon">
+          <a class="fullBtn" href="#">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- 슬라이드 음악 차트 -->
     <div class="chart_section_1">
       <div class="inner_1">
@@ -169,6 +186,7 @@
           </div>
         </div>
       </div>
+
       <a id="btn_bottom"><i class="fa-solid fa-angles-down"></i></a>
     </div>
     <div class="chart_section_2">
@@ -201,6 +219,7 @@
           </ul>
         </div>
       </div>
+
       <a id="btn_top"><i class="fa-solid fa-angles-up"></i></a>
     </div>
   </body>

@@ -18,49 +18,110 @@ body {
 //VIDEO
 
 // HEADER
-header {
-  top: 0;
-  width: 100%;
-  position: fixed;
+// header {
+//   top: 0;
+//   width: 100%;
+//   position: fixed;
+//   display: flex;
+//   z-index: 1;
+//   height: 7vh;
+
+//   .inner {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+
+//     a {
+//       position: relative;
+
+//       /* HOME icon */
+//       &:nth-child(1) {
+//         position: absolute;
+//         left: 0;
+//         color: rgb(155, 155, 155);
+//         margin-left: 30px;
+//         font-size: 25px;
+//       }
+
+//       /* QR-CODE icon */
+//       &:nth-child(2) {
+//         position: absolute;
+//         right: 0;
+//         margin-right: 100px;
+//         color: rgb(155, 155, 155);
+//         font-size: 20px;
+//       }
+
+//       /* Screen확장 icon */
+//       &:nth-child(3) {
+//         position: absolute;
+//         right: 0;
+//         color: rgb(155, 155, 155);
+//         margin-right: 50px;
+//         font-size: 20px;
+//       }
+//     }
+//   }
+// }
+
+.navbar {
   display: flex;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
   z-index: 1;
-  height: 7vh;
+  // border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
 
-  .inner {
-    width: 100%;
+  .leftBox {
     display: flex;
-    align-items: center;
-    position: relative;
+    padding-left: 40px;
 
-    a {
+    .homeIcon {
+      font-size: 28px;
+      padding-right: 30px;
+    }
+
+    .searchWrap {
       position: relative;
-
-      /* HOME icon */
-      &:nth-child(1) {
-        position: absolute;
-        left: 0;
-        color: rgb(155, 155, 155);
-        margin-left: 30px;
-        font-size: 25px;
+      display: flex;
+      align-items: center;
+      border: 1px solid darkgray;
+      border-radius: 15px;
+      width: 280px;
+      .searchInput {
+        outline: none;
+        display: block;
+        margin-left: 10px;
+        border: none;
+        width: 220px;
+        height: 85%;
+        font-size: 15px;
+        background-color: transparent;
       }
-
-      /* QR-CODE icon */
-      &:nth-child(2) {
-        position: absolute;
-        right: 0;
-        margin-right: 100px;
-        color: rgb(155, 155, 155);
-        font-size: 20px;
+      .searchIconWrap {
+        align-items: center;
+        .fa-solid {
+          display: block;
+          font-size: 18px;
+          color: darkgray;
+          margin-left: 10px;
+        }
       }
+    }
+  }
+  .rightBox {
+    font-size: 24px;
+    width: 100px;
+    justify-content: space-around;
+    display: flex;
+    margin-right: 40px;
 
-      /* Screen확장 icon */
-      &:nth-child(3) {
-        position: absolute;
-        right: 0;
-        color: rgb(155, 155, 155);
-        margin-right: 50px;
-        font-size: 20px;
-      }
+    .qrIcon {
+      font-size: 28px;
     }
   }
 }
@@ -246,6 +307,7 @@ header {
       padding: 0 50px;
       display: flex;
       justify-content: space-around;
+      z-index: 999;
 
       .rank_div {
         font-family: "Anton", sans-serif;
@@ -257,7 +319,6 @@ header {
         padding: 20px;
 
         .text_div {
-          width: 14vw;
           height: 25vh;
           display: block;
           h1 {
@@ -299,27 +360,17 @@ header {
 
           img {
             position: relative;
-            height: 11vw;
-            margin-top: 20px;
+            border-radius: 8px;
+            width: 11vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
           }
         }
       }
     }
-    // .rank_inner_1.show,
-    // .rank_inner_2.show,
-    // .rank_inner_3.show,
-    // .rank_inner_4.show,
-    // .rank_inner_5.show {
-    //   opacity: 1;
-    // }
-    // .rank_inner_1.hide,
-    // .rank_inner_2.hide,
-    // .rank_inner_3.hide,
-    // .rank_inner_4.hide,
-    // .rank_inner_5.hide {
-    //   opacity: 0;
-    // }
   }
+
   #btn_bottom {
     position: absolute;
     color: #888;
@@ -353,12 +404,13 @@ header {
     .rank_list {
       position: relative;
       top: 50%;
-      transform: translateY(-40%);
+      left: 50%;
+      transform: translate(-50%, -40%);
 
       h1 {
         font-family: "Anton", sans-serif;
         letter-spacing: 1px;
-        margin: 0 30px;
+        padding: 10px 40px;
         span {
           color: black;
           font-size: 25px;
@@ -380,55 +432,69 @@ header {
           box-sizing: border-box;
           ul {
             margin: 0 20px;
-          }
 
-          .list_track_row {
-            background-color: white;
-            margin: 10px 0;
-            border-radius: 10px;
-            display: table;
-            width: 100%;
-            height: 50px;
-            padding: 10px 10px;
-            vertical-align: middle;
-            flex-wrap: wrap;
-
-            .album {
-              white-space: normal;
-              display: table-cell;
-              width: 50px;
+            .list_track_row {
+              background-color: white;
+              margin: 10px 0;
+              border-radius: 10px;
+              display: table;
+              width: 22.5vw;
+              height: 50px;
+              padding: 10px 10px;
               vertical-align: middle;
+              flex-wrap: wrap;
 
-              img {
+              .album {
+                white-space: normal;
+                display: table-cell;
                 width: 50px;
-              }
-            }
-            .rank {
-              display: table-cell;
-              width: 31px;
-              padding: 5px 0 0 9px;
-              text-align: center;
-              padding-top: 5px;
-              color: black;
-            }
-            .song_area {
-              display: table-cell;
-              padding: 4px 20px 0 8px;
-              vertical-align: top;
-              .song {
-                height: 20px;
-                color: black;
-                .title {
+                vertical-align: middle;
+
+                img {
+                  width: 50px;
+                  border-radius: 3px;
                 }
               }
-              .singer {
-                height: 19px;
-                margin-top: 3px;
-                font-size: 15px;
-                line-height: 19px;
-                letter-spacing: -0.1px;
-                color: #888;
-                .artist {
+              .rank {
+                display: table-cell;
+                width: 31px;
+                padding: 5px 0 0 9px;
+                text-align: center;
+                padding-top: 5px;
+                color: rgb(76, 76, 76);
+                font-weight: bold;
+              }
+              .song_area {
+                display: table-cell;
+                padding: 4px 20px 0 8px;
+                vertical-align: top;
+                .song {
+                  height: 20px;
+                  color: black;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  word-break: break-all;
+                  width: 15vw;
+                  height: 20px;
+                  .title {
+                  }
+                }
+                .singer {
+                  height: 19px;
+                  margin-top: 3px;
+                  font-size: 15px;
+                  line-height: 19px;
+                  letter-spacing: -0.1px;
+                  color: #888;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  word-break: break-all;
+                  width: 13vw;
+                  height: 20px;
+                  .artist {
+                  }
                 }
               }
             }
@@ -437,6 +503,7 @@ header {
       }
     }
   }
+
   #btn_top {
     position: absolute;
     color: #888;
