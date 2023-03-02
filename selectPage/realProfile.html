@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./realProfile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="profile-title">
+        <h1>Profile</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="left-container">
+        <div class="chan_left">찬호</div>
+        <div class="hee_left">HEeHee</div>
+        <div class="song_left">songmy</div>
+        <div class="joon_left">joon</div>
+      </div>
+      <div class="right-container">
+        <!-- right -->
+        <div class="chan_right">12</div>
+        <div class="hee_right">12</div>
+        <div class="song_right">12</div>
+        <div class="joon_right">12</div>
+        <!-- BTN -->
+        <div class="btn_right">
+          <div class="btn btn_chan"></div>
+          <div class="btn btn_hee"></div>
+          <div class="btn btn_song"></div>
+          <div class="btn btn_joon"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const chan_left = document.querySelector(".chan_left");
+      const hee_left = document.querySelector(".hee_left");
+      const song_left = document.querySelector(".song_left");
+      const joon_left = document.querySelector(".joon_left");
+
+      //배열
+      const left_container = document.querySelector(".left-container");
+      const leftContent = left_container.querySelectorAll("div");
+      console.log(leftContent);
+      // const leftContent = left_container.querySelectorAll("div");
+      // console.log(leftContent);
+
+      const btn_chan = document.querySelector(".btn_chan");
+      const btn_hee = document.querySelector(".btn_hee");
+      const btn_song = document.querySelector(".btn_song");
+      const btn_joon = document.querySelector(".btn_joon");
+
+      btn_chan.addEventListener("click", function () {
+        song_left.classList.remove("on");
+        hee_left.classList.remove("on");
+        chan_left.classList.add("on");
+      });
+      btn_hee.addEventListener("click", function () {
+        chan_left.classList.remove("on");
+        song_left.classList.remove("on");
+        hee_left.classList.add("on");
+      });
+      btn_song.addEventListener("click", function () {
+        chan_left.classList.remove("on");
+        hee_left.classList.remove("on");
+        song_left.classList.add("on");
+      });
+    </script>
+  </body>
+</html>
