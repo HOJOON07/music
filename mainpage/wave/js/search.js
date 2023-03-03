@@ -1,5 +1,5 @@
 const data = song_data; //멜론차트 데이터
-
+// console.log(data);
 const rank = document.querySelectorAll(".rank");
 const rankImg = document.querySelectorAll(".rankImg");
 const rankNumber = document.querySelectorAll(".rankNumber");
@@ -7,6 +7,9 @@ const musicName = document.querySelectorAll(".musicName");
 const artistName = document.querySelectorAll(".artistName");
 const albumName = document.querySelectorAll(".albumName");
 const searchResult = document.querySelector(".searchResult");
+//모달
+const modal = document.getElementById("modal");
+
 for (let i = 0; i < rank.length; i++) {
   rank[i].setAttribute("id", data[i].id);
   rankImg[i].setAttribute("src", data[i].albumCover);
@@ -24,6 +27,9 @@ for (let i = 0; i < data.length; i++) {
   arr.push(obj);
 }
 
+searchResult.addEventListener("click", function () {
+  modal.style.display = "flex";
+});
 const input = document.querySelector(".searchInput");
 const music = document.querySelector(".music");
 const singer = document.querySelector(".singer");
@@ -35,11 +41,12 @@ input.addEventListener("keyup", function (e) {
   //대소문자 구분없는 데이터
   const upSearchData = arr.filter((el) => el.song.search(upValue) !== -1);
   const idArr = [];
+
   upSearchData.forEach((el) => {
     idArr.push(el.id);
   });
 
-  const searchData = [];
+  let searchData = [];
   for (let i = 0; i < song_data.length; i++) {
     for (let j = 0; j < idArr.length; j++) {
       if (song_data[i].id == idArr[j]) {
@@ -49,13 +56,6 @@ input.addEventListener("keyup", function (e) {
   }
 
   if (searchData.length === 0) music.innerHTML = "곡 검색 결과가 없습니다.";
-  // if (searchData.length === 0) music.innerHTML = "";
-  // if (searchData.length === 0) searchResult.remove();
-  // if (searchData.length === 0) {
-  //   musicNoResult.classList.add(show);
-  // } else {
-  //   musicNoResult.classList.remove(show);
-  // }
 
   // for 문의 if 문
   for (let i = 0; i < searchData.length; i++) {
@@ -85,6 +85,10 @@ input.addEventListener("keyup", function (e) {
     musicResultWrap.append(resultMusicName);
     musicResultWrap.append(resultArtistName);
     music.append(musicResultWrap);
+    // music.addEventListener("click", function () {
+    //   modal.style.display = "flex";
+    //   console.log(musicResultWrap);
+    // });
   }
 });
 
@@ -165,6 +169,11 @@ input.addEventListener("keyup", function (e) {
     singer.append(singerResultWrap);
   }
   // if (searchData.length === 0) artistResultWrap.innerHTML = "";
+
+  if (input.value === "") {
+    music.innerHTML = "";
+    singer.innerHTML = "";
+  }
 });
 
 input.addEventListener("focus", function () {
