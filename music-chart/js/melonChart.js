@@ -55,6 +55,7 @@ client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
       singer: singer,
       song: song,
       album: album,
+      id: i,
     };
     arr.push(obj);
   }
