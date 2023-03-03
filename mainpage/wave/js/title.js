@@ -7,7 +7,6 @@ let textToBeTypedArr = [
   "MusicPlayer",
 ];
 let index = 0;
-console.log(index);
 let isAdding = true;
 let textToBeTypedIndex = 0;
 

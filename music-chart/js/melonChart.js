@@ -55,10 +55,12 @@ client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
       singer: singer,
       song: song,
       album: album,
+
       id: i,
     };
     arr.push(obj);
   }
+  console.log(arr);
   const json = JSON.stringify(arr);
   const jsonWithVar = "song_data = " + json;
   fs.writeFileSync("item.json", jsonWithVar);
