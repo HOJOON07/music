@@ -18,8 +18,8 @@
   --grey: hsl(0, 0%, 50%);
 
   /* 카드 넓이 */
-  width: 310px;
-  height: 500px;
+  width: 230px;
+  height: 370px;
   margin: 40px;
 
   perspective: 1000px; /* 원근법 */
@@ -186,10 +186,10 @@ figure .img-ranking-bg {
 /* 카드 상단 설명 */
 figcaption {
   display: block;
-  font-size: 20px;
+  font-size: 17px;
   width: auto;
   margin-top: 10%;
-  padding: 8px 22px;
+  padding: 8px 18px;
   font-weight: bold;
   line-height: 1.6;
   letter-spacing: 2px;
@@ -263,7 +263,10 @@ figcaption {
     font-family: inherit;
     font-weight: bold;
     color: gray;
-
+    // margin-right: 75px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     letter-spacing: 1px;
 
     padding: 9px 20px;
