@@ -35,6 +35,7 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/chart.css " />
+    <link rel="stylesheet" href="../mainpage/wave/css/modals.css" />
 
     <!-- jquery -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -45,6 +46,7 @@
     <script src="../dance.json"></script>
     <script src="../rap.json"></script>
     <script src="../rb.json"></script>
+    <script defer src="../mainpage/wave/js/modal.js"></script>
 
     <!-- JS 연결 -->
     <script defer src="./js/chart.js"></script>
@@ -64,6 +66,7 @@
           </div>
         </div>
       </div>
+
       <div class="rightBox">
         <div class="qrIcon">
           <a class="qrBtn" href="#">
@@ -75,6 +78,55 @@
             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
           </a>
         </div>
+      </div>
+    </div>
+    <div id="modal" class="modal-overlay">
+      <div class="modal-window">
+        <div class="title">
+          <div class="modal-title">
+            <a href="#" id="closeBtn"
+              ><i class="fa-solid fa-circle-xmark"></i
+            ></a>
+            <a href="#"><i class="fa-solid fa-folder-open"></i></a>
+            <span class="textContent">% Welcome to KDT#Log terminal! %</span>
+          </div>
+        </div>
+        <section class="cmd">
+          <div class="inner">
+            <!-- <div class="welcome">% Welcome to KDT#Log terminal! %</div> -->
+            <div class="line1">
+              - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              - - - -
+            </div>
+            <div class="command">COMMANDS</div>
+            <div class="commands-line">
+              <div>whoami</div>
+              <div>pwd</div>
+              <div>exit</div>
+              <div>ls</div>
+              <div>cd</div>
+              <div>clear</div>
+            </div>
+            <div class="line2">
+              - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              - - - -
+            </div>
+            <br />
+            <div id="empty" class="empty"></div>
+
+            <div class="log">
+              <div class="log-1">
+                <span>ch@</span>
+                <span>:</span>
+                <span>MacBookAir ~ </span>
+                <span>%&nbsp;</span>
+              </div>
+              <input type="text" class="input" onkeyup="fnEnterkey();" />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 

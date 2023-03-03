@@ -6,13 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./realProfile.css" />
+    <link rel="stylesheet" href="../mainpage/wave/css/wave.css" />
+    <link rel="stylesheet" href="../mainpage/wave/css/modals.css" />
+    <link rel="stylesheet" href="../mainpage/select-page/css/header.css" />
+    <link rel="stylesheet" href="../mainpage/select-page/css/select.css" />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/baf7824541.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="../mainpage/wave/js/search.js"></script>
+    <script src="../../item.json"></script>
   </head>
   <body>
-    <header>
-      <div class="profile-title">
-        <h1>Profile</h1>
+    <div class="navbar">
+      <div class="leftBox">
+        <div class="homeIcon">
+          <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="searchWrap">
+          <!-- 검색창 -->
+          <div class="inputWrap">
+            <input class="searchInput" type="text" placeholder="노래 검색" />
+            <div class="searchIconWrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <!-- 숨겨진 검색 결과 -->
+          <div class="searchResult">
+            <!-- 랭크 1~5 -->
+            <div class="chartRank">
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img class="rankImg" alt="테스트 송태섭 이미지" />
+                </div>
+                <p class="rankNumber"></p>
+                <p class="musicName"></p>
+                <p class="artistName"></p>
+              </div>
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img class="rankImg" alt="테스트 송태섭 이미지" />
+                </div>
+                <p class="rankNumber"></p>
+                <p class="musicName"></p>
+                <p class="artistName"></p>
+              </div>
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img class="rankImg" alt="테스트 송태섭 이미지" />
+                </div>
+                <p class="rankNumber"></p>
+                <p class="musicName"></p>
+                <p class="artistName"></p>
+              </div>
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img class="rankImg" alt="테스트 송태섭 이미지" />
+                </div>
+                <p class="rankNumber"></p>
+                <p class="musicName"></p>
+                <p class="artistName"></p>
+              </div>
+              <div class="rank">
+                <div class="rankImgWrap">
+                  <img class="rankImg" alt="테스트 송태섭 이미지" />
+                </div>
+                <p class="rankNumber"></p>
+                <p class="musicName"></p>
+                <p class="artistName"></p>
+              </div>
+            </div>
+            <!-- 검색 결과 -->
+            <div class="music">
+              <!-- <div class="musicNoResult">
+                <p>검색결과가 없습니다.</p>
+              </div> -->
+            </div>
+            <div class="singer">
+              <!-- <div class="singerNoResult">
+                <p>검색결과가 없습니다.</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+      <div class="rightBox">
+        <div class="qrIcon">
+          <a class="qrBtn" href="#">
+            <i class="fa-solid fa-qrcode modalBtn"></i>
+          </a>
+        </div>
+        <div class="fullScreenIcon">
+          <a class="fullBtn" href="#">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </a>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="left-container">
         <div class="chan_left on">
@@ -86,7 +178,9 @@
           <div class="content_img">이찬호 페이지</div>
         </div>
         <div class="hee_right">
-          <div class="content_img"><img src="./img/csh_img.png" alt="csh_page"></div>
+          <div class="content_img">
+            <img src="./img/csh_img.png" alt="csh_page" />
+          </div>
         </div>
         <div class="song_right">
           <div class="content_img">송민영 페이지</div>

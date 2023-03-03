@@ -23,7 +23,7 @@ const input = document.querySelector(".cmd .inner .log .input");
 const modal = document.getElementById("modal");
 const modalWindow = document.querySelector("#modal .modal-window");
 const modalBtn = document.querySelector(".modalBtn");
-console.log(modalBtn);
+const btns = document.querySelector(".fa-qrcode");
 const modalOver = document.querySelector("#modal.modal-overlay");
 // //모달 닫기 버튼
 const closeBtn = document.querySelector(".fa-circle-xmark");
@@ -35,7 +35,7 @@ closeBtn.addEventListener("click", function () {
   empty.innerText = "";
   modal.style.display = "none";
 });
-modalBtn.addEventListener("click", function () {
+btns.addEventListener("click", function () {
   // modalWindow.classList.remove("close");
   // modalOver.classList.remove("close");
   // modal.style.display = "flex";
@@ -230,7 +230,7 @@ function fnEnterkey() {
     }
     //input = cd main
     else if (input.value === "cd home") {
-      location.href = "index.html";
+      location.href = "../mainpage/wave/index.html";
     }
   }
 }
