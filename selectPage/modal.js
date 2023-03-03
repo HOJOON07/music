@@ -26,9 +26,7 @@ const modalBtn = document.querySelector("header .inner a:nth-child(2)");
 
 const modalOver = document.querySelector("#modal.modal-overlay");
 // //모달 닫기 버튼
-const closeBtn = document.querySelector(
-  "#modal .modal-window .title .modal-title a .fa-circle-xmark"
-);
+const closeBtn = document.querySelector(".fa-circle-xmark");
 
 //모달 닫기
 closeBtn.addEventListener("click", function () {
@@ -61,7 +59,8 @@ function fnEnterkey() {
       input.value !== "cd minyoung" &&
       input.value !== "cd heehee" &&
       input.value !== "cd hojoon" &&
-      input.value !== "cd .."
+      input.value !== "cd .." &&
+      input.value !== "cd git"
     ) {
       const dummy = document.createElement("div");
       dummy.innerHTML = mac.innerText;
@@ -138,7 +137,8 @@ function fnEnterkey() {
 
       const lsProfile = document.createElement("span");
       lsProfile.style.color = "dodgerblue";
-      lsProfile.innerText = "/home \u00a0 /music \u00a0 /profile \u00a0 /main";
+      lsProfile.innerText =
+        "/home \u00a0 /music \u00a0 /profile \u00a0 /main \u00a0 /git";
       empty.append(lsProfile);
       input.value = "";
     }
@@ -161,10 +161,38 @@ function fnEnterkey() {
       empty.append(lsProfile);
       input.value = "";
     }
+    //cd chanho
+    else if (mac.classList.contains("profile") && input.value === "cd chanho") {
+      window.open("https://github.com/zack8361");
+      input.value = "";
+    }
+    //cd minyoung
+    else if (
+      mac.classList.contains("profile") &&
+      input.value === "cd minyoung"
+    ) {
+      window.open("https://github.com/songmy1206");
+      input.value = "";
+    }
+    //cd heehee
+    else if (mac.classList.contains("profile") && input.value === "cd heehee") {
+      window.open("https://github.com/HeeHeeHee-github");
+      input.value = "";
+    }
+    //cd hoojoon
+    else if (mac.classList.contains("profile") && input.value === "cd heehee") {
+      window.open("https://github.com/HOJOON07");
+      input.value = "";
+    }
     //cd profile
     else if (input.value === "cd profile") {
+      location.href = "realProfile.html";
+      input.value = "";
+    }
+    //cd git
+    else if (input.value === "cd git") {
       const cd = document.createElement("div");
-      mac.innerText = "ch@ : MacBookAir profile % \u00a0";
+      mac.innerText = "ch@ : MacBookAir git % \u00a0";
       mac.setAttribute("style", "rgba(0,0,0,0.5)");
       mac.classList.add("profile");
 
@@ -176,7 +204,7 @@ function fnEnterkey() {
       //현재 색
       const lsEx = document.createElement("span");
       lsEx.style.color = "rgba(0,0,0,0.5)";
-      lsEx.innerText = ": cd profile";
+      lsEx.innerText = ": cd git";
       cd.append(lsEx);
       input.value = "";
 
