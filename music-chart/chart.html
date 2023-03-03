@@ -40,7 +40,11 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <!-- JSON 파일 소스연결  -->
-    <script src="./item.json"></script>
+    <script src="../item.json"></script>
+    <script src="../ballad.json"></script>
+    <script src="../dance.json"></script>
+    <script src="../rap.json"></script>
+    <script src="../rb.json"></script>
 
     <!-- JS 연결 -->
     <script defer src="./js/chart.js"></script>
@@ -73,7 +77,64 @@
         </div>
       </div>
     </div>
-    <!-- 슬라이드 음악 차트 -->
+
+    <!-- 차트 메인 -->
+    <div class="main_section">
+      <section class="left__container">
+        <p class="left__text-sm">SongHeeHo</p>
+        <h1 class="left__text-lg">What's hot this weekend?</h1>
+        <p class="left__text-md">Listen to a variety of popular music.</p>
+        <a href="/playlist.html" class="left__btn">Go to playlist</a>
+      </section>
+
+      <section class="popupVideo">
+        <!-- 성희 카드 -->
+        <section
+          data-video="js1CtxSY38I"
+          class="right__card"
+          style="background-image: url(./img/attention.jpeg)"
+        >
+          <p class="right__text-sm">CSH's Pick !</p>
+          <h1 class="right__text-lg">Attention - NewJeans</h1>
+        </section>
+        <!-- 찬호 카드 -->
+        <section
+          data-video="yHWWGm0nxYk"
+          class="right__card"
+          style="
+            background-image: url(./img/melody.jpeg);
+            background-position: center right;
+          "
+        >
+          <p class="right__text-sm">LCH's Pick !</p>
+          <h1 class="right__text-lg">멜로디 - ASH ISLAND</h1>
+        </section>
+        <!-- 민영 카드 -->
+        <section
+          data-video="uR8Mrt1IpXg"
+          class="right__card"
+          style="background-image: url(./img/psycho.jpeg)"
+        >
+          <p class="right__text-sm">SMY's Pick !</p>
+          <h1 class="right__text-lg">Psycho - Red Velvet</h1>
+        </section>
+        <!-- 호준 카드 -->
+        <section
+          data-video="Xp8Ep1W-azw"
+          class="right__card"
+          style="background-image: url(./img/goodbye.jpeg)"
+        >
+          <p class="right__text-sm">KHJ's Pick !</p>
+          <h1 class="right__text-lg">Goodbye - 박효신</h1>
+        </section>
+        <!-- 유튜브 모달 -->
+        <div class="video-popup">
+          <div class="video-popup-closer"></div>
+        </div>
+      </section>
+      <a id="btn_bottom"><i class="fa-solid fa-angles-down"></i></a>
+    </div>
+
     <div class="chart_section_1">
       <div class="inner_1">
         <div class="select_div">
@@ -98,7 +159,10 @@
 
         <div id="rank_inner_1">
           <div class="rank_div">
-            <div class="text_div"><h1>01</h1></div>
+            <div class="text_div">
+              <h1>01</h1>
+              <!-- <i class="fa-brands fa-youtube"></i> -->
+            </div>
           </div>
           <div class="rank_div">
             <div class="text_div"><h1>02</h1></div>
@@ -186,13 +250,18 @@
           </div>
         </div>
       </div>
-
-      <a id="btn_bottom"><i class="fa-solid fa-angles-down"></i></a>
+      <a id="btn_bottom_2"><i class="fa-solid fa-angles-down"></i></a>
     </div>
     <div class="chart_section_2">
       <div class="inner_2">
         <div class="rank_list">
-          <h1>Top 50 <span>></span></h1>
+          <div class="top50_top">
+            <h1>
+              Top 50&nbsp;<span>></span>
+              <h2></h2>
+            </h1>
+          </div>
+
           <ul class="scroll_list">
             <li class="list_item">
               <ul class="first_list_ul"></ul>
@@ -219,67 +288,7 @@
           </ul>
         </div>
       </div>
-
       <a id="btn_top"><i class="fa-solid fa-angles-up"></i></a>
     </div>
   </body>
-  <script>
-    $("#btn_now").on("click", function () {
-      console.log("1");
-      $("#rank_inner_1").show();
-      $("#rank_inner_2").hide();
-      $("#rank_inner_3").hide();
-      $("#rank_inner_4").hide();
-      $("#rank_inner_5").hide();
-    });
-    $("#btn_ballad").on("click", function () {
-      console.log("2");
-      $("#rank_inner_2").show();
-      $("#rank_inner_1").hide();
-      $("#rank_inner_5").hide();
-      $("#rank_inner_3").hide();
-      $("#rank_inner_4").hide();
-    });
-    $("#btn_dance").on("click", function () {
-      console.log("3");
-      $("#rank_inner_3").show();
-      $("#rank_inner_1").hide();
-      $("#rank_inner_2").hide();
-      $("#rank_inner_5").hide();
-      $("#rank_inner_4").hide();
-    });
-    $("#btn_rap").on("click", function () {
-      console.log("4");
-      $("#rank_inner_4").show();
-      $("#rank_inner_1").hide();
-      $("#rank_inner_2").hide();
-      $("#rank_inner_3").hide();
-      $("#rank_inner_5").hide();
-    });
-    $("#btn_rb").on("click", function () {
-      console.log("5");
-      $("#rank_inner_5").show();
-      $("#rank_inner_1").hide();
-      $("#rank_inner_2").hide();
-      $("#rank_inner_3").hide();
-      $("#rank_inner_4").hide();
-    });
-
-    // 페이지 상단으로 이동하는 메소드
-    const html_top = () => {
-      // scrollTop은 상단이기 때문에 0, duration은 애니메이션 속도 (ms)
-      $("html, body").animate({ scrollTop: 0 }, { duration: 500 });
-    };
-    // 버튼 클릭 시 페이지 상단으로 이동
-    $("#btn_top").on("click", () => html_top());
-
-    // 버튼 클릭 시 페이지 하단으로 이동
-    $("#btn_bottom").click(function () {
-      // $("html, body").scrollTop($(document).height());
-      $("html, body").animate(
-        { scrollTop: $(document).height() },
-        { duration: 900 }
-      );
-    });
-  </script>
 </html>

@@ -2,69 +2,248 @@
 @import "reset";
 
 // FONT
+@font-face {
+  font-family: "NEXON Lv2 Gothic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-//font-family: 'Anton', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Nunito:wght@300&display=swap");
 
+// font-family: 'Anton', sans-serif;
+// font-family: 'Archivo Black', sans-serif;
+// font-family: 'Nunito', sans-serif;
+
+// 속성
+$left-lg: "Archivo Black", sans-serif;
+$left-primary-font: "Nunito", sans-serif;
+$primary-font: sans-serif;
+$secondary-font: "Oswald", sans-serif;
+$white: #fff;
 body {
   -ms-overflow-style: none;
-  background: linear-gradient(55deg, #c9d6ff, #e2e2e2);
+  background: linear-gradient(25deg, #c9d6ff, #e2e2e2, #7b94e6);
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-//VIDEO
+// 차트 메인
+.main_section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 40px;
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
 
-// HEADER
-// header {
-//   top: 0;
-//   width: 100%;
-//   position: fixed;
-//   display: flex;
-//   z-index: 1;
-//   height: 7vh;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0) 10%,
+      rgba(20, 20, 20, 0.25) 25%,
+      rgba(20, 20, 20, 0.5) 50%,
+      rgba(20, 20, 20, 0.75) 75%,
+      rgba(20, 20, 20, 1) 100%
+    );
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-//   .inner {
-//     width: 100%;
+  /* 왼쪽 멘트 */
+  .left__container {
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    .left__text-sm {
+      font-family: $left-primary-font;
+      font-size: 20px;
+      font-style: italic;
+      text-decoration: underline;
+      color: #fff;
+      &::before {
+        width: 24px;
+        height: 2px;
+      }
+    }
+    .left__text-md {
+      color: #fff;
+      font-family: $left-primary-font;
+      font-size: 25px;
+      font-weight: 100;
+      line-height: 1.5;
+      padding: 0 32px 0 0;
+      opacity: 0.5;
+    }
+    .left__text-lg {
+      color: #fff;
+      font-family: $left-lg;
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+    }
+    .left__btn {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 24px;
+      font-family: $primary-font;
+      font-size: 13px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 150px;
+      margin: 8px 0 0;
+      opacity: 0.5;
+      padding: 12px;
+      transition: 0.3s;
+      z-index: 1;
+
+      &:hover {
+        background-color: #fff;
+        color: black;
+        letter-spacing: 0.7px;
+      }
+    }
+  }
+  /* 오른쪽 하단 카드 / 팝업 */
+  .popupVideo {
+    height: 40vh;
+    margin: 0px -150px 0 0;
+    display: flex;
+    align-self: flex-end;
+    z-index: 1;
+    .right__card {
+      background-size: cover;
+      background-position: center center;
+      box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.3),
+        0 16px 8px -8px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      width: 14vw;
+      height: calc(100% - 64px);
+      margin: 0 8px;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        margin: -8px 8px 0;
+      }
+      .right__text-sm {
+        opacity: 0.8;
+      }
+      .right__text-lg {
+        color: #fff;
+        font-family: $secondary-font;
+        font-size: 19px;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.2;
+        width: 100%;
+        margin: 0;
+      }
+    }
+    /* 오른쪽 하단 카드 텍스트 */
+    .right__text-sm {
+      color: #fff;
+      font-family: $primary-font;
+      font-size: 12px;
+      margin: 0;
+      padding: 16px 0 8px;
+      position: relative;
+      &::before {
+        content: "";
+        background: #fff;
+        height: 1px;
+        width: 16px;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  #btn_bottom {
+    position: absolute;
+    color: #ffffff;
+    font-size: 35px;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    cursor: pointer;
+    z-index: 999;
+  }
+}
+
+// @media screen and (max-width: 960px) {
+//   main {
 //     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
 //     align-items: center;
-//     position: relative;
+//     margin: 0 16px;
+//     padding: 8px 0 32px;
+//     height: unset;
+//     width: calc(100% - 65px);
+//     transform: scale(1);
+//   }
 
-//     a {
-//       position: relative;
+//   section.card-lg__container {
+//     margin: 32px 0 0;
+//     padding: 0 0 32px;
+//   }
 
-//       /* HOME icon */
-//       &:nth-child(1) {
-//         position: absolute;
-//         left: 0;
-//         color: rgb(155, 155, 155);
-//         margin-left: 30px;
-//         font-size: 25px;
-//       }
-
-//       /* QR-CODE icon */
-//       &:nth-child(2) {
-//         position: absolute;
-//         right: 0;
-//         margin-right: 100px;
-//         color: rgb(155, 155, 155);
-//         font-size: 20px;
-//       }
-
-//       /* Screen확장 icon */
-//       &:nth-child(3) {
-//         position: absolute;
-//         right: 0;
-//         color: rgb(155, 155, 155);
-//         margin-right: 50px;
-//         font-size: 20px;
-//       }
-//     }
+//   section.card-sm__container {
+//     align-self: center;
+//     margin: 0 -72px 0 0;
 //   }
 // }
 
+// @media screen and (max-width: 695px) {
+//   main {
+//     padding: 8px 32px 0;
+//   }
+
+//   section.card-sm__container {
+//     height: unset;
+//     width: 100%;
+//     margin: 0;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   section.card-sm {
+//     width: calc(100% - 32px);
+//     height: 200px;
+//     margin: 0 0 16px;
+//   }
+
+//   .card-sm:hover {
+//     margin: 8px 0;
+//     transform: scale(0.9);
+//   }
+// }
+
+// HEADER
 .navbar {
   display: flex;
   position: fixed;
@@ -83,6 +262,10 @@ body {
     .homeIcon {
       font-size: 28px;
       padding-right: 30px;
+
+      i {
+        color: #888;
+      }
     }
 
     .searchWrap {
@@ -104,6 +287,7 @@ body {
       }
       .searchIconWrap {
         align-items: center;
+
         .fa-solid {
           display: block;
           font-size: 18px;
@@ -122,13 +306,28 @@ body {
 
     .qrIcon {
       font-size: 28px;
+      i {
+        color: #888;
+      }
+    }
+  }
+  .fullScreenIcon {
+    i {
+      color: #888;
     }
   }
 }
-//
 
+.chart_section {
+  height: 100vh;
+  // background-image: url("../img/newjeans_bg.jpeg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: 0% 60%;
+}
 .chart_section_1 {
   height: 100vh;
+  position: relative;
   // background-image: url("../img/newjeans_bg.jpeg");
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -154,17 +353,19 @@ body {
         white-space: nowrap;
         position: relative;
         margin-right: 30px;
-        font-family: "Anton", sans-serif;
-        font-size: 38px;
+        font-family: $left-lg;
+        font-size: 48px;
       }
       button {
+        color: #454545;
+        font-family: "NEXON Lv2 Gothic";
         white-space: nowrap;
         word-break: break-all;
         font-size: 16px;
         background-color: transparent;
-        border: 1px solid #888;
+        border: 1px solid #a9bcfd;
         border-radius: 30px;
-        padding: 10px 15px;
+        padding: 12px 15px;
         margin-right: 10px;
         display: flex;
         align-items: center;
@@ -172,16 +373,17 @@ body {
         cursor: pointer;
         transition: 0.3s;
         &:hover {
-          background-color: #888;
+          background-color: #a9bcfd;
           color: white;
         }
         &.clicked {
-          background-color: #888;
+          background-color: #a9bcfd;
           color: white;
         }
       }
 
       .calendar {
+        font-family: "NEXON Lv2 Gothic";
         position: absolute;
         right: -3%;
         width: 100px;
@@ -282,14 +484,42 @@ body {
             width: 10vw;
             height: 30px;
           }
-
-          img {
+          div {
             position: relative;
-            border-radius: 8px;
             width: 11vw;
+            height: 11vw;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            img {
+              position: absolute;
+              border-radius: 8px;
+              width: 11vw;
+              cursor: pointer;
+              &:hover {
+                opacity: 0.5;
+                // /*rgb컬러a알파 0~1까지 화이트 0.3만큼 알파 혹은 반투명*/
+                // background: rgba(255, 0, 0, 0.3);
+                // /* 변형할 것은 배경 1초, 빠른 시작 서서히 감속*/
+                // transition: background 1s ease-out;
+              }
+            }
+            i {
+              position: absolute;
+              color: rgb(255, 255, 255);
+              z-index: 999;
+              font-size: 50px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              cursor: pointer;
+              transition: 0.2s;
+              opacity: 0;
+              // &:hover {
+              //   opacity: 1;
+              // }
+            }
           }
         }
       }
@@ -308,7 +538,7 @@ body {
       padding: 0 50px;
       display: flex;
       justify-content: space-around;
-      z-index: 999;
+      z-index: 99;
 
       .rank_div {
         font-family: "Anton", sans-serif;
@@ -359,20 +589,45 @@ body {
             height: 30px;
           }
 
-          img {
+          div {
             position: relative;
-            border-radius: 8px;
             width: 11vw;
+            height: 11vw;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            img {
+              position: absolute;
+              border-radius: 8px;
+              width: 11vw;
+              cursor: pointer;
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+            i {
+              position: absolute;
+              color: rgb(255, 255, 255);
+              z-index: 999;
+              font-size: 50px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              cursor: pointer;
+              transition: 0.2s;
+              opacity: 0;
+              // &:hover {
+              //   opacity: 1;
+              // }
+            }
           }
         }
       }
     }
   }
 
-  #btn_bottom {
+  #btn_bottom_2 {
     position: absolute;
     color: #888;
     font-size: 35px;
@@ -390,10 +645,14 @@ body {
 .chart_section_2 {
   height: 100vh;
   position: relative;
+  background-image: url("../img/back.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   .inner_2 {
     position: relative;
-    width: 80vw;
+    width: 70vw;
     top: 50%;
     left: 50%;
     height: 65vh;
@@ -406,15 +665,36 @@ body {
       position: relative;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -40%);
+      transform: translate(-50%, -50%);
+      .top50_top {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 60vw;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: space-between;
+        h1 {
+          color: white;
+          font-family: $left-lg;
+          letter-spacing: 1px;
+          padding: 10px 20px;
+          font-size: 45px;
+          display: inline-flex;
+          align-items: center;
+          text-shadow: 3px 4px #83a8ff;
 
-      h1 {
-        font-family: "Anton", sans-serif;
-        letter-spacing: 1px;
-        padding: 10px 40px;
-        span {
-          color: black;
-          font-size: 25px;
+          span {
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+          }
+        }
+        h2 {
+          font-family: $left-lg;
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid rgb(120, 120, 120);
+          padding: 10px;
         }
       }
 
@@ -478,8 +758,6 @@ body {
                   word-break: break-all;
                   width: 15vw;
                   height: 20px;
-                  .title {
-                  }
                 }
                 .singer {
                   height: 19px;
@@ -494,8 +772,6 @@ body {
                   word-break: break-all;
                   width: 13vw;
                   height: 20px;
-                  .artist {
-                  }
                 }
               }
             }
@@ -530,4 +806,42 @@ body {
   100% {
     bottom: 30px;
   }
+}
+
+.video-popup.reveal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.video-popup .video-wrapper {
+  position: relative;
+  width: 60vw;
+  z-index: 10;
+}
+
+.video-popup .video-wrapper iframe {
+  position: absolute;
+  width: 45vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.video-popup.reveal .video-popup-closer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
 }
