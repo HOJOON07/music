@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oswald:wght@400;700&family=VT323&display=swap");
-/* 
-font-family: 'Architects Daughter', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'VT323', monospace; 
-*/
+
 * {
   margin: 0;
   padding: 0;
@@ -27,8 +23,7 @@ figure {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* background: linear-gradient(-65deg, lavender 50%, rgba(0,0,0,0) 50%), url(./img/art1.jpg); */
-  background: linear-gradient(-65deg, lavender 50%, #fff 50%);
+  background: linear-gradient(-65deg, transparent 50%, whitesmoke 50%);
 }
 figure h1 {
   position: absolute;
@@ -80,12 +75,7 @@ figure section article .inner {
   border-radius: 50%;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   opacity: 0.6;
-  /* transform: scale(0.8); */
   transition: 1s;
-  /* background-image: url(./img/art1.jpg);
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center; */
 }
 figure section article .inner>ul>li{
   position: absolute;
@@ -127,15 +117,14 @@ figure section article .inner .turntable{
 }
  figure section article .inner {
   opacity: 1;
- }
-/*  transform: scale(1.1); */
-
+}
 figure section article .inner .lp.lp-on {
   animation: lp-rotation 4s linear infinite running 1s;
 }
 figure section article .inner .lp.lp-off {
   animation: lp-rotation 4s linear infinite paused 1s;
 }
+
 @keyframes lp-rotation {
   0% {
     transform: rotate(0deg);
@@ -167,12 +156,6 @@ figure section article .inner .lp.lp-off {
     left: 50%;
     transform: translateX(-50%);
     height: 250px;
-    /* position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 200px;
-    width: 23%; */
 }
 .music__inner {
     width: 380px;
@@ -182,13 +165,6 @@ figure section article .inner .lp.lp-off {
     border-radius: 15px;
     background: var(--white);
     box-shadow: 0 6px 15px var(--lightshadow);
-    /* width: 100%;
-    height: 100%;
-    padding: 25px 30px;
-    position: relative;
-    border-radius: 15px;
-    background: var(--white);
-    box-shadow: 0 6px 15px var(--lightshadow); */
 }
 .music__song {
     text-align: center;
@@ -245,93 +221,68 @@ figure section article .inner .lp.lp-off {
 }
 .music__control i:nth-child(2),
 .music__control i:nth-child(4) {
-    font-size: 40px;
+  font-size: 40px;
 }
 .music__control i.fa-heart{
   font-size: 22px;
 }
 .music__control .play-pause {
-    width: 40px; height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--pink);
-    z-index: 1;
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--pink);
+  z-index: 1;
 }
 
 .music__control .play-pause #control-play {
-    -webkit-text-fill-color: var(--pink);
-    opacity: 1;
+  -webkit-text-fill-color: var(--pink);
+  opacity: 1;
 }
 .music__list {
-    /* width: 400px;   
-    height: 550px;  */
-    position: relative;
-    background: rgba(255, 255, 255, .5);
+    position: absolute;
     width: 25vw;
     height: 65vh;
     left: 0%;
-    /* z-index: 10; */
     top: 25%;
     padding: 15px;
-    /* box-shadow: 5px 5px 5px rgba(0,0,0,0.1); */
 }
 .music__list .list {
-    color: var(--lightblack);
-    height: 100%;
-    padding-right: 15px;
-    padding-left: 13%;
+  color: var(--lightblack);
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 13%;
 }
 .music__list .list > ul {
-    max-height: 100%;
-    overflow: auto;
+  max-height: 100%;
+  overflow: auto;
 }
 .music__list .list > ul::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 .music__list .list > ul > li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .music__list .list > ul > li.playing {
-    color: lightsalmon;
-    font-size: 18px;
+  color: lightsalmon;
+  font-size: 18px;
 }
 .music__list .list > ul > li{
   cursor: pointer;
 }
 .music__list .list > ul > li > div em {
-    font-style: normal;
+  font-style: normal;
 }
 .music__list .list > ul > li > div p {
-    opacity: 0.8;
-    margin-top: 5px;
-    font-size: 15px;
-}
-.album__list{
-  padding: 15px;
-  width: 25vw;
-  height: 65vh;
-  position: absolute;
-  /* box-shadow: 0px 5px 5px rgba(0,0,0,0.1); */
-  top: 25%;
-  right: 0;
-  overflow: auto;
-}
-.album__list::-webkit-scrollbar {
-  width: 0;
-}
-.album__list .album__lyrics {
-  color: white;  
-  padding: 0px 13% 15px 15px;
-  font-size: 20px;
-  letter-spacing: 1px;   
-  line-height: 25px;
+  opacity: 0.8;
+  margin-top: 5px;
+  font-size: 15px;
 }
 
 i.material-icons{cursor: pointer;}
@@ -358,9 +309,28 @@ i.material-icons.queue{cursor: auto;}
     transform : rotate(11deg);
   }
 }
+
 figure section article .inner .turntable.turntable-off {
   animation: turntable-on 1s linear 1 forwards;
 }
 figure section article .inner .turntable.turntable-on {
   animation: turntable-off 1s linear 1 forwards;
+}
+
+/* video */
+figure .bg_video {
+  position: absolute;
+  top: 3.5%;
+  left: 33%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+}
+figure .bg_video li{display: none;}
+figure .bg_video li.video_on{display: block;}
+figure .bg_video li video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

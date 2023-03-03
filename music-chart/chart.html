@@ -40,30 +40,228 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <!-- JSON 파일 소스연결  -->
-    <script src="./item.json"></script>
+    <script src="../item.json"></script>
+    <script src="../ballad.json"></script>
+    <script src="../dance.json"></script>
+    <script src="../rap.json"></script>
+    <script src="../rb.json"></script>
 
     <!-- JS 연결 -->
     <script defer src="./js/chart.js"></script>
+    <script defer src="../mainpage/select-page/js/header.js"></script>
   </head>
   <body>
-    <figure>
-      <img src="./img/background.jpg" />
-    </figure>
     <!-- HEADER -->
-    <header>
-      <div class="inner">
-        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-qrcode"></i></a>
-        <a href="#"
-          ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
-        ></a>
+    <div class="navbar">
+      <div class="leftBox">
+        <div class="homeIcon">
+          <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="searchWrap">
+          <input class="searchInput" type="text" placeholder="노래 검색" />
+          <div class="searchIconWrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
       </div>
-    </header>
-    <!-- 슬라이드 음악 차트 -->
-    <div class="chart_section">
-      <div class="inner">
+      <div class="rightBox">
+        <div class="qrIcon">
+          <a class="qrBtn" href="#">
+            <i class="fa-solid fa-qrcode"></i>
+          </a>
+        </div>
+        <div class="fullScreenIcon">
+          <a class="fullBtn" href="#">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 차트 메인 -->
+    <div class="main_section">
+      <section class="left__container">
+        <p class="left__text-sm">SongHeeHo</p>
+        <h1 class="left__text-lg">What's hot this weekend?</h1>
+        <p class="left__text-md">Listen to a variety of popular music.</p>
+        <a href="/playlist.html" class="left__btn">Go to playlist</a>
+      </section>
+
+      <section class="popupVideo">
+        <!-- 성희 카드 -->
+        <section
+          data-video="js1CtxSY38I"
+          class="right__card"
+          style="background-image: url(./img/attention.jpeg)"
+        >
+          <p class="right__text-sm">CSH's Pick !</p>
+          <h1 class="right__text-lg">Attention - NewJeans</h1>
+        </section>
+        <!-- 찬호 카드 -->
+        <section
+          data-video="yHWWGm0nxYk"
+          class="right__card"
+          style="
+            background-image: url(./img/melody.jpeg);
+            background-position: center right;
+          "
+        >
+          <p class="right__text-sm">LCH's Pick !</p>
+          <h1 class="right__text-lg">멜로디 - ASH ISLAND</h1>
+        </section>
+        <!-- 민영 카드 -->
+        <section
+          data-video="uR8Mrt1IpXg"
+          class="right__card"
+          style="background-image: url(./img/psycho.jpeg)"
+        >
+          <p class="right__text-sm">SMY's Pick !</p>
+          <h1 class="right__text-lg">Psycho - Red Velvet</h1>
+        </section>
+        <!-- 호준 카드 -->
+        <section
+          data-video="Xp8Ep1W-azw"
+          class="right__card"
+          style="background-image: url(./img/goodbye.jpeg)"
+        >
+          <p class="right__text-sm">KHJ's Pick !</p>
+          <h1 class="right__text-lg">Goodbye - 박효신</h1>
+        </section>
+        <!-- 유튜브 모달 -->
+        <div class="video-popup">
+          <div class="video-popup-closer"></div>
+        </div>
+      </section>
+      <a id="btn_bottom"><i class="fa-solid fa-angles-down"></i></a>
+    </div>
+
+    <div class="chart_section_1">
+      <div class="inner_1">
+        <div class="select_div">
+          <h1>Top 5</h1>
+          <button id="btn_now" class="clicked">NOW</button>
+          <button id="btn_ballad">발라드</button>
+          <button id="btn_dance">댄스</button>
+          <button id="btn_rap">랩/힙합</button>
+          <button id="btn_rb">R&B/SOUL</button>
+
+          <div class="calendar">
+            <div class="upper">
+              <div id="month"></div>
+            </div>
+            <div class="lower">
+              <div id="day"></div>
+              <div id="date"></div>
+              <div id="year"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rank_inner_1">
+          <div class="rank_div">
+            <div class="text_div">
+              <h1>01</h1>
+              <!-- <i class="fa-brands fa-youtube"></i> -->
+            </div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_2">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_3">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_4">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+
+        <div id="rank_inner_5">
+          <div class="rank_div">
+            <div class="text_div"><h1>01</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>02</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>03</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>04</h1></div>
+          </div>
+          <div class="rank_div">
+            <div class="text_div"><h1>05</h1></div>
+          </div>
+        </div>
+      </div>
+      <a id="btn_bottom_2"><i class="fa-solid fa-angles-down"></i></a>
+    </div>
+    <div class="chart_section_2">
+      <div class="inner_2">
         <div class="rank_list">
-          <h1>Top 50 <span>></span></h1>
+          <div class="top50_top">
+            <h1>
+              Top 50&nbsp;<span>></span>
+              <h2></h2>
+            </h1>
+          </div>
+
           <ul class="scroll_list">
             <li class="list_item">
               <ul class="first_list_ul"></ul>
@@ -76,17 +274,21 @@
               <ul class="eighth_list_ul"></ul>
               <ul class="ninth_list_ul"></ul>
               <ul class="tenth_list_ul"></ul>
+              <!-- <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul>
+              <ul class="list_ul"></ul> -->
             </li>
           </ul>
         </div>
       </div>
+      <a id="btn_top"><i class="fa-solid fa-angles-up"></i></a>
     </div>
   </body>
-  <script></script>
-
-  <!-- SCRIPT 
-    // for (let i = 0; i < 100; i++) { // let songData =
-  JSON.parse(JSON.stringify(song_data[i].song)); // 노래 // let singerData =
-  JSON.parse(JSON.stringify(song_data[i].singer)); // 가수 //
-  console.log(`${songData} - ${singerData}`); // } -->
 </html>

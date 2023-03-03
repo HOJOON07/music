@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./realProfile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="profile-title">
+        <h1>Profile</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="left-container">
+        <div class="chan_left on">
+          <div class="left_content">
+            <div class="profile_name">Lee chan ho</div>
+            <div class="profile_content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              necessitatibus. Velit est fugiat ipsam possimus debitis
+              voluptatibus voluptate vitae temporibus consectetur ipsum. Nihil,
+              excepturi? Animi beatae doloribus quaerat earum pariatur.
+            </div>
+            <div class="profile_btn">
+              <a
+                href="https://www.notion.so/Lee-Chan-ho-e3810ba0e3784571b665e2057f7d0dca"
+                class="notion_btn"
+                >NOTION</a
+              >
+              <a href="https://kong8361.tistory.com/" class="blog_btn">BLOG</a>
+            </div>
+          </div>
+        </div>
+        <div class="hee_left">
+          <div class="left_content">
+            <div class="profile_name">Cho sung hee</div>
+            <div class="profile_content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              necessitatibus. Velit est fugiat ipsam possimus debitis
+              voluptatibus voluptate vitae temporibus consectetur ipsum. Nihil,
+              excepturi? Animi beatae doloribus quaerat earum pariatur.
+            </div>
+            <div class="profile_btn">
+              <a href="" class="notion_btn">NOTION</a>
+              <a href="" class="blog_btn">BLOG</a>
+            </div>
+          </div>
+        </div>
+        <div class="song_left">
+          <div class="left_content">
+            <div class="profile_name">Song min young</div>
+            <div class="profile_content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              necessitatibus. Velit est fugiat ipsam possimus debitis
+              voluptatibus voluptate vitae temporibus consectetur ipsum. Nihil,
+              excepturi? Animi beatae doloribus quaerat earum pariatur.
+            </div>
+            <div class="profile_btn">
+              <a href="" class="notion_btn">NOTION</a>
+              <a href="" class="blog_btn">BLOG</a>
+            </div>
+          </div>
+        </div>
+        <div class="joon_left">
+          <div class="left_content">
+            <div class="profile_name">Kim ho joon</div>
+            <div class="profile_content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              necessitatibus. Velit est fugiat ipsam possimus debitis
+              voluptatibus voluptate vitae temporibus consectetur ipsum. Nihil,
+              excepturi? Animi beatae doloribus quaerat earum pariatur.
+            </div>
+            <div class="profile_btn">
+              <a href="" class="notion_btn">NOTION</a>
+              <a href="" class="blog_btn">BLOG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <!-- right -->
+        <div class="chan_right on">
+          <div class="content_img">이찬호 페이지</div>
+        </div>
+        <div class="hee_right">
+          <div class="content_img"><img src="./img/csh_img.png" alt="csh_page"></div>
+        </div>
+        <div class="song_right">
+          <div class="content_img">송민영 페이지</div>
+        </div>
+        <div class="joon_right">
+          <div class="content_img">김호준 페이지</div>
+        </div>
+        <!-- BTN -->
+        <div class="btn_right">
+          <div class="btn btn_chan btn_active"></div>
+          <div class="btn btn_hee"></div>
+          <div class="btn btn_song"></div>
+          <div class="btn btn_joon"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // left_content
+      const chan_left = document.querySelector(".chan_left");
+      const hee_left = document.querySelector(".hee_left");
+      const song_left = document.querySelector(".song_left");
+      const joon_left = document.querySelector(".joon_left");
+
+      //배열
+      const left_container = document.querySelector(".left-container");
+      const leftContent = left_container.querySelectorAll("div");
+      console.log(leftContent);
+      // const leftContent = left_container.querySelectorAll("div");
+      // console.log(leftContent);
+
+      // 버튼
+      const btn_chan = document.querySelector(".btn_chan");
+      const btn_hee = document.querySelector(".btn_hee");
+      const btn_song = document.querySelector(".btn_song");
+      const btn_joon = document.querySelector(".btn_joon");
+
+      // right_content
+      const chan_right = document.querySelector(".chan_right");
+      const hee_right = document.querySelector(".hee_right");
+      const song_right = document.querySelector(".song_right");
+      const joon_right = document.querySelector(".joon_right");
+
+      btn_chan.addEventListener("click", function () {
+        // left_content
+        song_left.classList.remove("on");
+        hee_left.classList.remove("on");
+        joon_left.classList.remove("on");
+        chan_left.classList.add("on");
+        // right content
+        song_right.classList.remove("on");
+        hee_right.classList.remove("on");
+        joon_right.classList.remove("on");
+        chan_right.classList.add("on");
+        // btn_content
+        btn_chan.classList.add("btn_active");
+        btn_hee.classList.remove("btn_active");
+        btn_song.classList.remove("btn_active");
+        btn_joon.classList.remove("btn_active");
+      });
+      btn_hee.addEventListener("click", function () {
+        // left_content
+        chan_left.classList.remove("on");
+        song_left.classList.remove("on");
+        joon_left.classList.remove("on");
+        hee_left.classList.add("on");
+        // right_content
+        chan_right.classList.remove("on");
+        song_right.classList.remove("on");
+        joon_right.classList.remove("on");
+        hee_right.classList.add("on");
+        // btn_content
+        btn_chan.classList.remove("btn_active");
+        btn_hee.classList.add("btn_active");
+        btn_song.classList.remove("btn_active");
+        btn_joon.classList.remove("btn_active");
+      });
+      btn_song.addEventListener("click", function () {
+        // left_content
+        chan_left.classList.remove("on");
+        hee_left.classList.remove("on");
+        joon_left.classList.remove("on");
+        song_left.classList.add("on");
+        // right_content
+        chan_right.classList.remove("on");
+        hee_right.classList.remove("on");
+        joon_right.classList.remove("on");
+        song_right.classList.add("on");
+        // btn_content
+        btn_chan.classList.remove("btn_active");
+        btn_hee.classList.remove("btn_active");
+        btn_song.classList.add("btn_active");
+        btn_joon.classList.remove("btn_active");
+      });
+      btn_joon.addEventListener("click", function () {
+        // left_content
+        chan_left.classList.remove("on");
+        hee_left.classList.remove("on");
+        song_left.classList.remove("on");
+        joon_left.classList.add("on");
+        // right_content
+        chan_right.classList.remove("on");
+        hee_right.classList.remove("on");
+        song_right.classList.remove("on");
+        joon_right.classList.add("on");
+        // btn_content
+        btn_chan.classList.remove("btn_active");
+        btn_hee.classList.remove("btn_active");
+        btn_song.classList.remove("btn_active");
+        btn_joon.classList.add("btn_active");
+      });
+    </script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MY player</title>
+  <title>playlist</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
   <!-- fontawesome -->
@@ -16,27 +16,61 @@
   <script defer src="./header.js"></script>
 </head>
 <body>
-  <header>
-      <div class="headerinner">
-        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-qrcode"></i></a>
-        <a href="#"
-          ><i class="fa-solid fa-up-right-and-down-left-from-center"></i
-        ></a>
+    <div class="navbar">
+      <div class="leftBox">
+        <div class="homeIcon">
+          <a class="homeBtn" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="searchWrap">
+          <input class="searchInput" type="text" placeholder="노래 검색" />
+          <div class="searchIconWrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
       </div>
-    </header>
+      <div class="rightBox">
+        <div class="qrIcon">
+          <a class="qrBtn" href="#">
+            <i class="fa-solid fa-qrcode"></i>
+          </a>
+        </div>
+        <div class="fullScreenIcon">
+          <a class="fullBtn" href="#">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   <figure>
+    <div class="bg_video">
+      <ul>
+        <li class="video_on" data-index="1"><video src="./img/video1.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="2"><video src="./img/video2.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="3"><video src="./img/video3.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="4"><video src="./img/video4.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="5"><video src="./img/video5.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="6"><video src="./img/video6.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="7"><video src="./img/video7.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="8"><video src="./img/video8.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="9"><video src="./img/video9.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="10"><video src="./img/video10.mp4" autoplay="" muted="" loop=""></video></li>
+        <li data-index="11"><video src="./img/video11.mp4" autoplay="" muted="" loop=""></video></li>
+      </ul>
+      
+    </div>
     <h1>
       <strong>PLAYLIST</strong><br/>
     </h1>
     <section>
-      <article><div class="inner">
-        <ul>
-          <!--script-->
-        </ul>
-        <div class="lp"></div>
-        <div class="turntable"></div>
-      </div></article>
+      <article>
+        <div class="inner">
+          <ul>
+            <!--script-->
+          </ul>
+          <div class="lp"></div>
+          <div class="turntable"></div>
+        </div>
+      </article>
     </section>
     <div class="wrap__music">
       <div class="music__inner">
@@ -73,15 +107,6 @@
         <ul>
           <!-- Javascript -->
         </ul>
-      </div>
-    </div>
-    
-    <!-- album__list -->
-    <div class="album__list">  
-      <div class="album__lyrics">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eius suscipit ea nulla ex, totam incidunt? Odit, debitis, aliquid sapiente aperiam facilis eum ducimus consectetur illum inventore adipisci tempora nisi! <br/>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio sed eum nostrum vero in nihil, earum deleniti aperiam officiis cumque soluta explicabo eius suscipit, accusantium ad! Quae amet quo ipsam?<br/>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis perferendis blanditiis accusantium quos officiis harum soluta esse magni voluptates, ullam eius repellat, quo molestias aspernatur minima repudiandae optio necessitatibus pariatur?
       </div>
     </div>
   </figure>

@@ -5,6 +5,8 @@ const { JSDOM } = jsdom;
 const fs = require("fs");
 const { contains } = require("cheerio");
 const arr = [];
+
+// TOP 100
 client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
   let chartHtml = $.html(); // 크롤링해온 url의 html (멜론차트 페이지의 html)
   let dom = new JSDOM(chartHtml);
@@ -12,9 +14,7 @@ client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
   let title = dom.window.document.querySelectorAll(
     ".ellipsis.rank01 > span > a"
   ); // 노래 제목
-
   let record = dom.window.document.querySelectorAll(".ellipsis.rank03 > a"); // 앨범
-
   // 가수를 각각 a 태그에서 받아 오는 것이 아니라, 전체 태그를 가져와서 작업
   // --> 이렇게 하면 가수가 2명이어도 하나의 배열에 데이터가 들어가서 문제 해결 가능
   let artistPart = dom.window.document.querySelectorAll(".ellipsis.rank02"); // 가수
@@ -50,20 +50,14 @@ client.fetch("http://www.melon.com/chart/", {}, (err, $, res, body) => {
     const albumCover = cover[i].src;
     const song = title.item(i)?.innerHTML;
     const album = record.item(i)?.innerHTML;
-
-    // const singer = artist.item(i).innerHTML;
-    // console.log(i, singer, song);
-    // const like = likeBtn~ 코드 다시써야함
-
     const obj = {
       albumCover: albumCover,
       singer: singer,
       song: song,
       album: album,
-      //like: like,
+
       id: i,
     };
-    //console.log(obj);
     arr.push(obj);
   }
   console.log(arr);

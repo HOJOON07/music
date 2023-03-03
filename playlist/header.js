@@ -1,6 +1,4 @@
-const fullScreen = document.querySelector(
-  "header .headerinner a:nth-child(3) > i"
-);
+const fullScreen = document.querySelector(".fullBtn > i");
 //전체 화면 처리
 fullScreen.addEventListener("click", function () {
   if (
