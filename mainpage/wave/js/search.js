@@ -28,14 +28,14 @@ for (let i = 0; i < data.length; i++) {
   arr.push(obj);
 }
 
-const input = document.querySelector(".searchInput");
+const input2 = document.querySelector(".searchInput");
 const music = document.querySelector(".music");
 const singer = document.querySelector(".singer");
 const musicNoResult = document.querySelector(".musicNoResult");
 const singerNoResult = document.querySelector(".singerNoResult");
 
-input.addEventListener("keyup", function (e) {
-  const upValue = input.value.toUpperCase();
+input2.addEventListener("keyup", function (e) {
+  const upValue = input2.value.toUpperCase();
   //대소문자 구분없는 데이터
   const upSearchData = arr.filter((el) => el.song.search(upValue) !== -1);
   const idArr = [];
@@ -98,14 +98,14 @@ window.addEventListener("click", (e) => {
   console.log("!!!!", e.target);
 });
 
-input.addEventListener("keyup", function (e) {
+input2.addEventListener("keyup", function (e) {
   if (e.target.value.length === 0) {
     music.classList.add("hide");
   } else {
     music.classList.remove("hide");
   }
 });
-input.addEventListener("keyup", function (e) {
+input2.addEventListener("keyup", function (e) {
   if (e.target.value.length > 0) {
     for (let i = 0; i < rank.length; i++) {
       rank[i].classList.add("hide");
@@ -117,8 +117,8 @@ input.addEventListener("keyup", function (e) {
   }
 });
 
-input.addEventListener("keyup", function (e) {
-  const upValue = input.value.toUpperCase();
+input2.addEventListener("keyup", function (e) {
+  const upValue = input2.value.toUpperCase();
   //대소문자 구분없는 데이터
   const upSearchData = arr.filter((el) => el.singer.search(upValue) !== -1);
   const idArr = [];
@@ -176,19 +176,19 @@ input.addEventListener("keyup", function (e) {
   }
   // if (searchData.length === 0) artistResultWrap.innerHTML = "";
 
-  if (input.value === "") {
+  if (input2.value === "") {
     music.innerHTML = "";
     singer.innerHTML = "";
   }
 });
 
-input.addEventListener("focus", function () {
+input2.addEventListener("focus", function () {
   searchResult.classList.add("show");
 });
 music.addEventListener("click", function () {
   searchResult.classList.add("show");
 });
 
-input.addEventListener("blur", function () {
+input2.addEventListener("blur", function () {
   searchResult.classList.remove("show");
 });
