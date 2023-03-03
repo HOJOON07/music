@@ -8,7 +8,8 @@ const artistName = document.querySelectorAll(".artistName");
 const albumName = document.querySelectorAll(".albumName");
 const searchResult = document.querySelector(".searchResult");
 //모달
-const modal = document.getElementById("modal");
+
+// const modal = document.getElementById("modal");
 
 for (let i = 0; i < rank.length; i++) {
   rank[i].setAttribute("id", data[i].id);
@@ -27,9 +28,6 @@ for (let i = 0; i < data.length; i++) {
   arr.push(obj);
 }
 
-searchResult.addEventListener("click", function () {
-  modal.style.display = "flex";
-});
 const input = document.querySelector(".searchInput");
 const music = document.querySelector(".music");
 const singer = document.querySelector(".singer");
@@ -81,15 +79,23 @@ input.addEventListener("keyup", function (e) {
     resultArtistName.classList.add("resultArtistName");
     resultArtistName.textContent = searchData[i].singer;
 
+    console.log(musicResultWrap);
+
     musicResultWrap.append(resultAlbumCover);
     musicResultWrap.append(resultMusicName);
     musicResultWrap.append(resultArtistName);
-    music.append(musicResultWrap);
-    // music.addEventListener("click", function () {
+
+    // musicResultWrap.addEventListener("click", function () {
     //   modal.style.display = "flex";
+    //   searchResult.classList.remove("show");
     //   console.log(musicResultWrap);
     // });
+    music.append(musicResultWrap);
   }
+});
+
+window.addEventListener("click", (e) => {
+  console.log("!!!!", e.target);
 });
 
 input.addEventListener("keyup", function (e) {
