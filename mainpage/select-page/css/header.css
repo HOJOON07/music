@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -60,6 +64,9 @@ body {
 }
 .navbar .leftBox .searchWrap .searchResult.show {
   display: block;
+}
+.navbar .leftBox .searchWrap .searchResult::-webkit-scrollbar {
+  display: none;
 }
 .navbar .leftBox .searchWrap .searchResult {
   display: none;
