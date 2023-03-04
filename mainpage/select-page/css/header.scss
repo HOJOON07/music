@@ -13,7 +13,7 @@ body {
   width: 100%;
   height: 80px;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
   align-items: center;
   justify-content: space-between;
 
@@ -29,7 +29,6 @@ body {
 
     // 검색창
     .searchWrap {
-      z-index: 9999;
       position: relative;
       .inputWrap {
         height: 35px;
@@ -62,11 +61,13 @@ body {
       }
       //여기서부터 검색 결과 창
       .searchResult.show {
-        display: block;
+        // display: block;
+        visibility: visible;
       }
       .searchResult::-webkit-scrollbar{display: none;}
       .searchResult {
-        display: none;
+        // display: none;
+        visibility: hidden;
         max-height: 350px;
         overflow: scroll;
         position: absolute;
@@ -80,6 +81,7 @@ body {
         .chartRank {
           .rank.hide {
             display: none;
+            // visibility: hidden;
           }
           .rank {
             width: 100%;
@@ -150,9 +152,11 @@ body {
 
         .music.hide {
           display: none;
+          // visibility: hidden;
         }
         .music {
           display: block;
+          // visibility: visible;
           font-size: 14px;
           color: darkgray;
 
@@ -212,9 +216,11 @@ body {
         }
         //singer
         .singer.hide {
+          // visibility: hidden;
           display: none;
         }
         .singer {
+          // visibility: visible;
           display: block;
           font-size: 14px;
           color: darkgray;

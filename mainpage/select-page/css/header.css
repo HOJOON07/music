@@ -17,7 +17,7 @@ body {
   width: 100%;
   height: 80px;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
   align-items: center;
   justify-content: space-between;
 }
@@ -31,7 +31,6 @@ body {
   padding-right: 30px;
 }
 .navbar .leftBox .searchWrap {
-  z-index: 9999;
   position: relative;
 }
 .navbar .leftBox .searchWrap .inputWrap {
@@ -63,13 +62,13 @@ body {
   margin-left: 10px;
 }
 .navbar .leftBox .searchWrap .searchResult.show {
-  display: block;
+  visibility: visible;
 }
 .navbar .leftBox .searchWrap .searchResult::-webkit-scrollbar {
   display: none;
 }
 .navbar .leftBox .searchWrap .searchResult {
-  display: none;
+  visibility: hidden;
   max-height: 350px;
   overflow: scroll;
   position: absolute;
