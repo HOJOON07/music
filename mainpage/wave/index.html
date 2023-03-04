@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../select-page/css/header.css" />
     <!-- 셀렉트 페이지 css -->
     <link rel="stylesheet" href="../select-page/css/select.css" />
-    <!-- 카드 모달 CSS -->
+    <!-- 카드 CSS -->
     <link rel="stylesheet" href="./css/card.css" />
-    <!-- 모달 CSS -->
+    <!-- 카드 모달 CSS -->
     <link rel="stylesheet" href="./css/modal.css" />
     <!-- 찐 모달 추가 cmd -->
-    <link rel="stylesheet" href="./css/modals.css" />
+    <link rel="stylesheet" href="./css/cmdmodals.css" />
     <!-- 제이 쿼리 CDN -->
 
     <script
@@ -66,7 +66,7 @@
         <div class="searchWrap">
           <!-- 검색창 -->
           <div class="inputWrap">
-            <input class="searchInput" type="text" placeholder="노래 검색" />
+            <input class="searchInput" type="text" placeholder="음악 검색" />
             <div class="searchIconWrap">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
@@ -117,19 +117,12 @@
               </div>
             </div>
             <!-- 검색 결과 -->
-            <div class="music">
-              <!-- <div class="musicNoResult">
-                <p>검색결과가 없습니다.</p>
-              </div> -->
-            </div>
-            <div class="singer">
-              <!-- <div class="singerNoResult">
-                <p>검색결과가 없습니다.</p>
-              </div> -->
-            </div>
+            <div class="music"></div>
+            <div class="singer"></div>
           </div>
         </div>
       </div>
+      <!-- 헤더 오른쪽 아이콘 부분 -->
       <div class="rightBox">
         <div class="qrIcon">
           <a class="qrBtn" href="#">
@@ -143,6 +136,7 @@
         </div>
       </div>
     </div>
+    <!-- 헤더 터미널 모달 부분 -->
     <div id="modal" class="modal-overlay">
       <div class="modal-window">
         <div class="title">
@@ -344,34 +338,33 @@
         </div>
       </footer>
     </div>
-    <div id="modal" class="modal-overlay">
-      <div class="modal-window">
-        <div class="cardWrap">
-          <p class="rankNum">01</p>
-          <div class="imgWrap">
-            <div class="albumWrap">
-              <img
-                class="albumImg"
-                src="https://img.insight.co.kr/static/2023/01/23/700/img_20230123173334_3l0c0491.webp"
-                alt="디토 앨범 커버"
-              />
-            </div>
-            <div class="iconBack">
-              <i class="fa-solid fa-play playBtn"></i>
-            </div>
+    <!-- 카드 모달 -->
+    <div class="cardmodal">
+      <!-- <div class="cardWrap">
+        <p class="rankNum">01</p>
+        <div class="imgWrap">
+          <div class="albumWrap">
+            <img
+              class="albumImg"
+              src="https://img.insight.co.kr/static/2023/01/23/700/img_20230123173334_3l0c0491.webp"
+              alt="디토 앨범 커버"
+            />
           </div>
-          <div class="infoWrap">
-            <div class="music_Singer_Album">
-              <span class="albumName">Newjeans 1st - </span>
-              <span class="singerName">NewJeans</span>
-              <p class="songName">Ditto</p>
-            </div>
-            <div class="heartIcon">
-              <i class="fa-solid fa-heart"></i>
-            </div>
+          <div class="iconBack">
+            <i class="fa-solid fa-play playBtn"></i>
           </div>
         </div>
-      </div>
+        <div class="infoWrap">
+          <div class="music_Singer_Album">
+            <span class="albumName">Newjeans 1st - </span>
+            <span class="singerName">NewJeans</span>
+            <p class="songName">Ditto</p>
+          </div>
+          <div class="heartIcon">
+            <i class="fa-solid fa-heart heartBtn"></i>
+          </div>
+        </div>
+      </div> -->
     </div>
   </body>
 </html>
