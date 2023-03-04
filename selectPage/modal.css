@@ -110,8 +110,6 @@
   transition: 1s;
 }
 
-#modal.modal-overlay.close {
-}
 
 @keyframes close {
   0% {
