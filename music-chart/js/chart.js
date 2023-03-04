@@ -179,7 +179,7 @@ for (let k = 0; k < 5; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -219,7 +219,7 @@ for (let k = 5; k < 10; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -259,7 +259,7 @@ for (let k = 10; k < 15; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -299,7 +299,7 @@ for (let k = 15; k < 20; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -339,7 +339,7 @@ for (let k = 20; k < 25; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -379,7 +379,7 @@ for (let k = 25; k < 30; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -419,7 +419,7 @@ for (let k = 30; k < 35; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -458,7 +458,7 @@ for (let k = 35; k < 40; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -497,7 +497,7 @@ for (let k = 40; k < 45; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
@@ -537,7 +537,7 @@ for (let k = 45; k < 50; k++) {
   singer_div_k.setAttribute("class", `singer`);
   song_div_k.appendChild(title_span_k);
   singer_div_k.appendChild(artist_span_k);
-  title_span_k.setAttribute("class", `title`);
+  title_span_k.setAttribute("class", `music_title`);
   artist_span_k.setAttribute("class", `artist`);
   album_div_k.appendChild(imgTag);
 
