@@ -1,20 +1,11 @@
 p {
   margin: 0;
 }
-// .playBtn {
-//   visibility: hidden;
-// }
-// // .playBtn.show {
-// //   visibility: visible;
-// // }
-// .heartBtn {
-//   visibility: hidden;
-// }
-// // .heartBtn.show {
-// //   visibility: visible;
-// // }
 
 .cardWrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
   border-radius: 25px;
   width: 300px;
   height: 400px;
@@ -67,11 +58,15 @@ p {
     position: relative;
     display: flex;
     height: 120px;
+    width: 140px;
     .music_Singer_Album {
       padding-top: 10px;
       width: 70%;
       height: 120px;
       margin-left: 40px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: break-all;
       .albumName {
         font-size: 14px;
         color: lightgray;

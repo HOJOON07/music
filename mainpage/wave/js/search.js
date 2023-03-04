@@ -43,7 +43,7 @@ for (let i = 0; i < rank.length; i++) {
     const rankNum = document.createElement("p");
     rankNum.classList.add("rankNum");
     // rankNum.innerText(idNum + 1);
-    rankNum.textContent = idNum + 1;
+    rankNum.textContent = Number(idNum) + 1;
     //3 이미지와 아이콘 랩 wrap
     const imgWrap = document.createElement("div");
     imgWrap.classList.add("imgWrap");
@@ -292,8 +292,6 @@ cardmodal.addEventListener("click", (e) => {
   if (evTarget.classList.contains("cardmodal")) {
     cardmodal.style.display = "none";
     cardmodal.innerHTML = "";
-    playBtn.style.visibility = "hidden";
-    heartBtn.style.visibility = "hidden";
   }
 });
 
