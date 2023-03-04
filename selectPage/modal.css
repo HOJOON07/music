@@ -88,7 +88,7 @@
   font-size: 16px;
 }
 .title {
-  background-image: url("../window-header-bg.png");
+  background-image: url("./img/window-header-bg.png");
   display: block;
   position: absolute;
   left: 0;

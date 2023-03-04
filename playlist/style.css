@@ -12,6 +12,7 @@ ul, ol {
 
 a {
   text-decoration: none;
+  color: gray;
 }
 
 body {
@@ -34,14 +35,14 @@ figure h1 {
 figure strong {
   font-size: 4rem;
   line-height: 1.4;
-  color: lightsalmon;
+  color: darkslategray;
   letter-spacing: 1px;
 }
 figure span {
   font-weight: normal;
   font-size: 16px;
   line-height: 16px;
-  color: var(--lightblack);
+  color: #515c6f;
   letter-spacing: 1px;
 }
 figure .menu {
@@ -142,13 +143,8 @@ figure section article .inner .lp.lp-off {
     font-family: 'Poppins';
 }
 :root {
-    --pink : lightsalmon;
-    --violet : lightcoral;
-    --white : #fff;
-    --lightshadow : rgba(0,0,0,0.15);
-    --lightblack : #515c6f;
-    --pinkshadow : lavenderblush;
-    --darkwhite : #cecaca;
+    --pink : gray;
+    --violet : darkslategray;
 }
 .wrap__music {
     position: absolute;
@@ -162,15 +158,15 @@ figure section article .inner .lp.lp-off {
     padding: 25px 30px;
     position: relative;
     border-radius: 15px;
-    background: var(--white);
-    box-shadow: 0 6px 15px var(--lightshadow);
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 .music__song {
     text-align: center;
     margin: 11px;
 }
 .music__song p {
-    color: var(--lightblack);
+    color: #515c6f;
 }
 .music__song .name {
     font-size: 25px;
@@ -202,7 +198,7 @@ figure section article .inner .lp.lp-off {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--lightblack);
+    color: #515c6f;
     font-size: 0.9em;
     pointer-events: none;
 }
@@ -244,14 +240,14 @@ figure section article .inner .lp.lp-off {
 }
 .music__list {
     position: absolute;
-    width: 25vw;
+    width: 26vw;
     height: 65vh;
     left: 0%;
     top: 25%;
     padding: 15px;
 }
 .music__list .list {
-  color: var(--lightblack);
+  color: #515c6f;
   height: 100%;
   padding-right: 15px;
   padding-left: 13%;
@@ -272,15 +268,16 @@ figure section article .inner .lp.lp-off {
   margin-bottom: 15px;
 }
 .music__list .list > ul > li.playing {
-  color: lightsalmon;
+  color: black;
   font-size: 18px;
+  font-weight: 500;
 }
 .music__list .list > ul > li{
   cursor: pointer;
 }
 .music__list .list > ul > li > div em {
   font-style: normal;
-  font-size: 22px;
+  font-size: 21px;
 }
 .music__list .list > ul > li > div p {
   opacity: 0.8;
